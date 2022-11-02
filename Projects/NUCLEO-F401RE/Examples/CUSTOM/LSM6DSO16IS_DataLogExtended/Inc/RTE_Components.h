@@ -22,7 +22,7 @@
 #define  __RTE_COMPONENTS_H__
 
 /* Defines ------------------------------------------------------------------*/
-/* STMicroelectronics.X-CUBE-ISPU.1.0.0 */
+/* STMicroelectronics.X-CUBE-ISPU.1.1.0 */
 #define LSM6DSO16IS_ACCGYR_I2C
 #define ISPU_DATALOGEXTENDED
 #define BSP_ISPU_MOTION_SENSORS

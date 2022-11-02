@@ -55,7 +55,9 @@ DIL24 adapter boards).</li>
 the innovative hardware/software features of ISPU sensors.</li>
 <li>Sample applications to upload json/ucf pair of files to ISPU device
 and transmit real time ISPU, inertial and environmental sensors data to
-a PC.</li>
+a PC Unicleo-GUI application.</li>
+<li>Sample applications to use library generated from NEAI Studio and
+send data to a PC terminal application.</li>
 <li>Compatible with the Unicleo-GUI graphical user interface to display
 sensors data and configure outputs.</li>
 <li>Sample implementation available on X-NUCLEO-IKS01A3 or
@@ -90,11 +92,232 @@ boards</a></li>
 <section id="update-history" class="col-sm-12 col-lg-8">
 <h1>Update History</h1>
 <div class="collapse">
-<input type="checkbox" id="collapse-section1" checked aria-hidden="true">
+<input type="checkbox" id="collapse-section2" checked aria-hidden="true">
+<label for="collapse-section2" aria-hidden="true">V1.1.0 /
+31-October-2022</label>
+<div>
+<h2 id="main-changes">Main Changes</h2>
+<h3 id="maintenance-release">Maintenance release</h3>
+<ul>
+<li>Regenerate the source code with CubeMX v6.6.1 and ISPU pack
+v1.1.0</li>
+<li>Add new examples: NEAI_AnomalyDetection</li>
+</ul>
+<h2 id="contents">Contents</h2>
+<p>The X-CUBE-ISPU expansion software package comes with a rich set of
+examples running on STMicroelectronics boards, organized by board and
+provided with preconfigured projects for the main supported
+toolchains.</p>
+<p>Documentation</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: left;">Document</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">X-CUBE-ISPU API Description</td>
+<td style="text-align: left;">V1.1.0</td>
+<td style="text-align: left;"><a
+href="Documentation\X-CUBE-ISPU.chm">CHM</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">Getting Started with X-CUBE-ISPU pack for
+STM32CubeMX</td>
+<td style="text-align: left;">V1.1.0</td>
+<td style="text-align: left;"><a
+href="Documentation\STMicroelectronics.X-CUBE-ISPU_GettingStarted.pdf">PDF</a></td>
+</tr>
+</tbody>
+</table>
+<p>Drivers</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: left;">Release note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32F4xx CMSIS</td>
+<td style="text-align: left;">V2.6.8</td>
+<td style="text-align: left;"><a
+href="Drivers\CMSIS\Device\ST\STM32F4xx\Release_Notes.html">release
+notes</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32F4xx HAL</td>
+<td style="text-align: left;">V1.8.0</td>
+<td style="text-align: left;"><a
+href="Drivers\STM32F4xx_HAL_Driver\Release_Notes.html">release
+notes</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">BSP STM32F4xx_Nucleo</td>
+<td style="text-align: left;">V1.2.8</td>
+<td style="text-align: left;"><a
+href="Drivers\BSP\STM32F4xx-Nucleo\Release_Notes.html">release
+notes</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32L4xx CMSIS</td>
+<td style="text-align: left;">V1.7.2</td>
+<td style="text-align: left;"><a
+href="Drivers\CMSIS\Device\ST\STM32L4xx\Release_Notes.html">release
+notes</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32L4xx HAL</td>
+<td style="text-align: left;">V1.13.2</td>
+<td style="text-align: left;"><a
+href="Drivers\STM32L4xx_HAL_Driver\Release_Notes.html">release
+notes</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">BSP STM32L4xx_Nucleo</td>
+<td style="text-align: left;">V2.1.7</td>
+<td style="text-align: left;"><a
+href="Drivers\BSP\STM32L4xx_Nucleo\Release_Notes.html">release
+notes</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">BSP Common</td>
+<td style="text-align: left;">V7.2.1</td>
+<td style="text-align: left;"><a
+href="Drivers\BSP\Components\Common\Release_Notes.html">release
+notes</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">BSP Component HTS221</td>
+<td style="text-align: left;">V5.4.0</td>
+<td style="text-align: left;"><a
+href="Drivers\BSP\Components\hts221\Release_Notes.html">release
+notes</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">BSP Component LPS22HH</td>
+<td style="text-align: left;">V1.3.0</td>
+<td style="text-align: left;"><a
+href="Drivers\BSP\Components\lps22hh\Release_Notes.html">release
+notes</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">BSP Component LIS2MDL</td>
+<td style="text-align: left;">V1.5.0</td>
+<td style="text-align: left;"><a
+href="Drivers\BSP\Components\lis2mdl\Release_Notes.html">release
+notes</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">BSP Component IIS2MDC</td>
+<td style="text-align: left;">V1.2.0</td>
+<td style="text-align: left;"><a
+href="Drivers\BSP\Components\iis2mdc\Release_Notes.html">release
+notes</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">BSP Component ISM330IS</td>
+<td style="text-align: left;">V1.0.0</td>
+<td style="text-align: left;"><a
+href="Drivers\BSP\Components\ism330is\Release_Notes.html">release
+notes</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">BSP Component LSM6DSO16IS</td>
+<td style="text-align: left;">V1.0.0</td>
+<td style="text-align: left;"><a
+href="Drivers\BSP\Components\lsm6dso16is\Release_Notes.html">release
+notes</a></td>
+</tr>
+</tbody>
+</table>
+<p>Ispu</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: left;">Release note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Ispu</td>
+<td style="text-align: left;">V1.1.0</td>
+<td style="text-align: left;"><a href="Ispu\Release_Notes.html">release
+notes</a></td>
+</tr>
+</tbody>
+</table>
+<p>Projects</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: left;">Release note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Projects</td>
+<td style="text-align: left;">V1.1.0</td>
+<td style="text-align: left;"><a
+href="Projects\Release_Notes.html">release notes</a></td>
+</tr>
+</tbody>
+</table>
+<p>Utilities</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: left;">Release note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Unicleo-GUI</td>
+<td style="text-align: left;">V1.21.0</td>
+<td style="text-align: left;"><a
+href="Utilities\PC_software\Unicleo-GUI.htm">release notes</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="known-limitations">Known Limitations</h2>
+<ul>
+<li>On dual-core STM32 series this expansion software can be used on
+both cores but exclusively</li>
+</ul>
+<h2 id="development-toolchains-and-compilers">Development Toolchains and
+Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain V9.20.1</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain
+V5.37.0</li>
+<li>STM32CubeIDE V1.10.1</li>
+</ul>
+<h2 id="supported-devices-and-boards">Supported Devices and Boards</h2>
+<ul>
+<li>STM32F401RE devices and NUCLEO-F401RE board RevC</li>
+<li>STM32L476RG devices and NUCLEO-L476RG board RevC</li>
+</ul>
+<h2 id="dependencies">Dependencies</h2>
+<p>None</p>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section1" aria-hidden="true">
 <label for="collapse-section1" aria-hidden="true">V1.0.0 /
 31-July-2022</label>
 <div>
-<h2 id="main-changes">Main Changes</h2>
+<h2 id="main-changes-1">Main Changes</h2>
 <h3 id="first-release">First release</h3>
 <ul>
 <li>First official release</li>
@@ -102,7 +325,7 @@ boards</a></li>
 v1.0.0</li>
 <li>Add new sensors: ISM330IS, LSM6DSO16IS</li>
 </ul>
-<h2 id="contents">Contents</h2>
+<h2 id="contents-1">Contents</h2>
 <p>The X-CUBE-ISPU expansion software package comes with a rich set of
 examples running on STMicroelectronics boards, organized by board and
 provided with preconfigured projects for the main supported
@@ -289,25 +512,26 @@ href="Utilities\PC_software\Unicleo-GUI.htm">release notes</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="known-limitations">Known Limitations</h2>
+<h2 id="known-limitations-1">Known Limitations</h2>
 <ul>
 <li>On dual-core STM32 series this expansion software can be used on
 both cores but exclusively</li>
 </ul>
-<h2 id="development-toolchains-and-compilers">Development Toolchains and
-Compilers</h2>
+<h2 id="development-toolchains-and-compilers-1">Development Toolchains
+and Compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain V9.20.1</li>
 <li>RealView Microcontroller Development Kit (MDK-ARM) toolchain
 V5.37.0</li>
 <li>STM32CubeIDE V1.9.0</li>
 </ul>
-<h2 id="supported-devices-and-boards">Supported Devices and Boards</h2>
+<h2 id="supported-devices-and-boards-1">Supported Devices and
+Boards</h2>
 <ul>
 <li>STM32F401RE devices and NUCLEO-F401RE board RevC</li>
 <li>STM32L476RG devices and NUCLEO-L476RG board RevC</li>
 </ul>
-<h2 id="dependencies">Dependencies</h2>
+<h2 id="dependencies-1">Dependencies</h2>
 <p>None</p>
 </div>
 </div>

@@ -392,9 +392,9 @@
               <FilePath>../Src/main.c</FilePath>
             </File>
             <File>
-              <FileName>user_int_interface.c</FileName>
+              <FileName>int_pins_interface.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Src/user_int_interface.c</FilePath>
+              <FilePath>../Src/int_pins_interface.c</FilePath>
             </File>
             <File>
               <FileName>custom_ispu_motion_sensors.c</FileName>
@@ -405,6 +405,16 @@
               <FileName>custom_ispu_motion_sensors_ex.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Src/custom_ispu_motion_sensors_ex.c</FilePath>
+            </File>
+            <File>
+              <FileName>custom_mems_control.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Src/custom_mems_control.c</FilePath>
+            </File>
+            <File>
+              <FileName>custom_mems_control_ex.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Src/custom_mems_control_ex.c</FilePath>
             </File>
             <File>
               <FileName>com.c</FileName>
@@ -425,16 +435,6 @@
               <FileName>serial_protocol.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Src/serial_protocol.c</FilePath>
-            </File>
-            <File>
-              <FileName>custom_mems_control.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Src/custom_mems_control.c</FilePath>
-            </File>
-            <File>
-              <FileName>custom_mems_control_ex.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Src/custom_mems_control_ex.c</FilePath>
             </File>
             <File>
               <FileName>app_x-cube-ispu.c</FileName>

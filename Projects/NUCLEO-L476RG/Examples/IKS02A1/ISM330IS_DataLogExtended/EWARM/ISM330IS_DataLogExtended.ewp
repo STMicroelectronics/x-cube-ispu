@@ -356,9 +356,9 @@
           <state>$PROJ_DIR$/../../../../../../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy</state>
           <state>$PROJ_DIR$/../../../../../../Drivers/CMSIS/Device/ST/STM32L4xx/Include</state>
           <state>$PROJ_DIR$/../../../../../../Drivers/CMSIS/Include</state>
-          <state>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/iis2mdc</state>
-          <state>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/Common</state>
           <state>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/ism330is</state>
+          <state>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/Common</state>
+          <state>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/iis2mdc</state>
         </option>
         <option>
           <name>CCStdIncCheck</name>
@@ -1064,13 +1064,19 @@
         <name>$PROJ_DIR$/../Src/main.c</name>
       </file>
       <file>
-        <name>$PROJ_DIR$/../Src/user_int_interface.c</name>
+        <name>$PROJ_DIR$/../Src/int_pins_interface.c</name>
       </file>
       <file>
         <name>$PROJ_DIR$/../Src/custom_ispu_motion_sensors.c</name>
       </file>
       <file>
         <name>$PROJ_DIR$/../Src/custom_ispu_motion_sensors_ex.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$/../Src/custom_mems_control.c</name>
+      </file>
+      <file>
+        <name>$PROJ_DIR$/../Src/custom_mems_control_ex.c</name>
       </file>
       <file>
         <name>$PROJ_DIR$/../Src/com.c</name>
@@ -1083,12 +1089,6 @@
       </file>
       <file>
         <name>$PROJ_DIR$/../Src/serial_protocol.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$/../Src/custom_mems_control.c</name>
-      </file>
-      <file>
-        <name>$PROJ_DIR$/../Src/custom_mems_control_ex.c</name>
       </file>
       <file>
         <name>$PROJ_DIR$/../Src/app_x-cube-ispu.c</name>
@@ -1120,16 +1120,16 @@
       <group>
         <name>Components</name>
         <file>
-          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/iis2mdc/iis2mdc_reg.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/iis2mdc/iis2mdc.c</name>
-        </file>
-        <file>
           <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/ism330is/ism330is_reg.c</name>
         </file>
         <file>
           <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/ism330is/ism330is.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/iis2mdc/iis2mdc_reg.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/iis2mdc/iis2mdc.c</name>
         </file>
       </group>
     </group>

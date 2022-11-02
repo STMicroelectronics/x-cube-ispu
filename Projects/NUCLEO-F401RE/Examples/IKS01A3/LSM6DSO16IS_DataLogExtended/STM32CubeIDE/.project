@@ -91,6 +91,11 @@
 			<locationURI>PARENT-1-PROJECT_LOC/Src/demo_serial.c</locationURI>
 		</link>
 		<link>
+			<name>Application/User/int_pins_interface.c</name>
+			<type>1</type>
+			<locationURI>PARENT-1-PROJECT_LOC/Src/int_pins_interface.c</locationURI>
+		</link>
+		<link>
 			<name>Application/User/main.c</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/Src/main.c</locationURI>
@@ -124,11 +129,6 @@
 			<name>Application/User/stm32f4xx_nucleo_bus.c</name>
 			<type>1</type>
 			<locationURI>PARENT-1-PROJECT_LOC/Src/stm32f4xx_nucleo_bus.c</locationURI>
-		</link>
-		<link>
-			<name>Application/User/user_int_interface.c</name>
-			<type>1</type>
-			<locationURI>PARENT-1-PROJECT_LOC/Src/user_int_interface.c</locationURI>
 		</link>
 		<link>
 			<name>Drivers/CMSIS/system_stm32f4xx.c</name>

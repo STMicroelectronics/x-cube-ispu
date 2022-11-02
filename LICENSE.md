@@ -7,6 +7,6 @@
 | BSP STM32F4xx_Nucleo            | STMicroelectronics   | BSD-3-Clause |
 | BSP STM32L4xx_Nucleo            | STMicroelectronics   | BSD-3-Clause |
 | BSP Components                  | STMicroelectronics   | BSD-3-Clause |
-| ISPU Algorithms                 | STMicroelectronics   | BSD-3-Clause |
-| STM32 Projects                  | STMicroelectronics   | SLA0095 |
+| STM32 Projects                  | STMicroelectronics   | BSD-3-Clause |
+| ISPU Algorithms                 | STMicroelectronics   | SLA0094 |
 | STM32 Utilities Unicleo-GUI     | STMicroelectronics   | SLA0068 |

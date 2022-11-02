@@ -332,7 +332,7 @@
               <MiscControls />
               <Define>USE_HAL_DRIVER,STM32L476xx</Define>
               <Undefine />
-              <IncludePath>../Inc;../../../../../../Drivers/STM32L4xx_HAL_Driver/Inc;../../../../../../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy;../../../../../../Drivers/CMSIS/Device/ST/STM32L4xx/Include;../../../../../../Drivers/CMSIS/Include;../../../../../../Drivers/BSP/Components/iis2mdc;../../../../../../Drivers/BSP/Components/Common;../../../../../../Drivers/BSP/Components/lsm6dso16is</IncludePath>
+              <IncludePath>../Inc;../../../../../../Drivers/STM32L4xx_HAL_Driver/Inc;../../../../../../Drivers/STM32L4xx_HAL_Driver/Inc/Legacy;../../../../../../Drivers/CMSIS/Device/ST/STM32L4xx/Include;../../../../../../Drivers/CMSIS/Include;../../../../../../Drivers/BSP/Components/lsm6dso16is;../../../../../../Drivers/BSP/Components/Common;../../../../../../Drivers/BSP/Components/iis2mdc</IncludePath>
             </VariousControls>
           </Cads>
           <Aads>
@@ -392,9 +392,9 @@
               <FilePath>../Src/main.c</FilePath>
             </File>
             <File>
-              <FileName>user_int_interface.c</FileName>
+              <FileName>int_pins_interface.c</FileName>
               <FileType>1</FileType>
-              <FilePath>../Src/user_int_interface.c</FilePath>
+              <FilePath>../Src/int_pins_interface.c</FilePath>
             </File>
             <File>
               <FileName>custom_ispu_motion_sensors.c</FileName>
@@ -405,6 +405,16 @@
               <FileName>custom_ispu_motion_sensors_ex.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Src/custom_ispu_motion_sensors_ex.c</FilePath>
+            </File>
+            <File>
+              <FileName>custom_mems_control.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Src/custom_mems_control.c</FilePath>
+            </File>
+            <File>
+              <FileName>custom_mems_control_ex.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../Src/custom_mems_control_ex.c</FilePath>
             </File>
             <File>
               <FileName>com.c</FileName>
@@ -425,16 +435,6 @@
               <FileName>serial_protocol.c</FileName>
               <FileType>1</FileType>
               <FilePath>../Src/serial_protocol.c</FilePath>
-            </File>
-            <File>
-              <FileName>custom_mems_control.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Src/custom_mems_control.c</FilePath>
-            </File>
-            <File>
-              <FileName>custom_mems_control_ex.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../Src/custom_mems_control_ex.c</FilePath>
             </File>
             <File>
               <FileName>app_x-cube-ispu.c</FileName>
@@ -477,16 +477,6 @@
           <GroupName>Drivers/BSP/Components</GroupName>
           <Files>
             <File>
-              <FileName>iis2mdc_reg.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../../../Drivers/BSP/Components/iis2mdc/iis2mdc_reg.c</FilePath>
-            </File>
-            <File>
-              <FileName>iis2mdc.c</FileName>
-              <FileType>1</FileType>
-              <FilePath>../../../../../../Drivers/BSP/Components/iis2mdc/iis2mdc.c</FilePath>
-            </File>
-            <File>
               <FileName>lsm6dso16is_reg.c</FileName>
               <FileType>1</FileType>
               <FilePath>../../../../../../Drivers/BSP/Components/lsm6dso16is/lsm6dso16is_reg.c</FilePath>
@@ -495,6 +485,16 @@
               <FileName>lsm6dso16is.c</FileName>
               <FileType>1</FileType>
               <FilePath>../../../../../../Drivers/BSP/Components/lsm6dso16is/lsm6dso16is.c</FilePath>
+            </File>
+            <File>
+              <FileName>iis2mdc_reg.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../../../../../../Drivers/BSP/Components/iis2mdc/iis2mdc_reg.c</FilePath>
+            </File>
+            <File>
+              <FileName>iis2mdc.c</FileName>
+              <FileType>1</FileType>
+              <FilePath>../../../../../../Drivers/BSP/Components/iis2mdc/iis2mdc.c</FilePath>
             </File>
           </Files>
         </Group>

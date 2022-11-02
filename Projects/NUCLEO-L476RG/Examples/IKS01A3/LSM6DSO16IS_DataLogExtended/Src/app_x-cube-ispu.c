@@ -2,7 +2,7 @@
   ******************************************************************************
   * File Name          : app_x-cube-ispu.c
   * Description        : This file provides code for the configuration
-  *                      of the STMicroelectronics.X-CUBE-ISPU.1.0.0 instances.
+  *                      of the STMicroelectronics.X-CUBE-ISPU.1.1.0 instances.
   ******************************************************************************
   * @attention
   *
@@ -177,7 +177,7 @@ static void MX_DataLogExtended_Init(void)
   (void)BSP_LED_Init(LED2);
 
   /* Set EXTI settings for User Interrupt */
-  Set_User_Int_Exti();
+  Set_Int_Pins_Exti();
 
   /* Initialize Virtual COM Port */
   (void)BSP_COM_Init(COM1);

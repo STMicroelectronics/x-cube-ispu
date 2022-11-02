@@ -8,7 +8,7 @@ This guide mainly focuses on steps to be followed to submit an issue.
 ### 1. Before opening an issue
 
 To report a bug/request please file an issue in the right repository
-(example for [x-cube-mems1](https://github.com/STMicroelectronics/x-cube-ispu/issues/new/choose)).
+(example for [x-cube-ispu](https://github.com/STMicroelectronics/x-cube-ispu/issues/new/choose)).
 
 
 Please check the following boxes before posting an issue:

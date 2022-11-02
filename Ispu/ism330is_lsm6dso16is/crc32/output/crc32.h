@@ -12,10 +12,8 @@
   ******************************************************************************
   */
 
-/* Automatically generated ISPU header file. */
-
-#ifndef _ISPU_CONF_H_
-#define _ISPU_CONF_H_
+#ifndef ISPU_CONF_H
+#define ISPU_CONF_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -23,20 +21,40 @@ extern "C" {
 
 #include <stdint.h>
 
-#ifndef MEMS_UCF_SHARED_TYPES
-#define MEMS_UCF_SHARED_TYPES
+#ifndef MEMS_UCF_EXT_SHARED_TYPES
+#define MEMS_UCF_EXT_SHARED_TYPES
 
-#define MEMS_UCF_OP_WRITE 0
-#define MEMS_UCF_OP_DELAY 1
+/*
+ * UCF extended format supports the following commands:
+ * - MEMS_UCF_OP_READ: read the register at the location specified by the
+ *   "address" field ("data" field is ignored
+ * - MEMS_UCF_OP_WRITE: write the value specified by the "data" field at the
+ *   location specified by the "address" field
+ * - MEMS_UCF_OP_DELAY: wait the number of milliseconds specified by the "data"
+ *   field ("address" field is ignored)
+ * - MEMS_UCF_OP_POLL_SET: poll the register at the location specified by the
+ *   "address" field until all the bits identified by the mask specified by the
+ *   "data" field are set to 1
+ * - MEMS_UCF_OP_POLL_RESET: poll the register at the location specified by the
+ *   "address" field until all the bits identified by the mask specified by the
+ *   "data" field are reset to 0
+ */
+
+#define MEMS_UCF_OP_READ       0
+#define MEMS_UCF_OP_WRITE      1
+#define MEMS_UCF_OP_DELAY      2
+#define MEMS_UCF_OP_POLL_SET   3
+#define MEMS_UCF_OP_POLL_RESET 4
 
 typedef struct {
 	uint8_t op;
 	uint8_t address;
 	uint8_t data;
-} ucf_line_t;
-#endif
+} ucf_line_ext_t;
 
-const ucf_line_t ispu_conf[] = {
+#endif /* MEMS_UCF_EXT_SHARED_TYPES */
+
+static const ucf_line_ext_t ispu_conf[] = {
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x01, .data = 0x02 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x01, .data = 0x00 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x01, .data = 0x80 },
@@ -75,7 +93,7 @@ const ucf_line_t ispu_conf[] = {
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x00 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x00 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x00 },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xD0 },
+	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xC8 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x03 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x01 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x00 },
@@ -482,7 +500,7 @@ const ucf_line_t ispu_conf[] = {
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x02 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x01 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x0C },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x80 },
+	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x78 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x03 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x02 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x80 },
@@ -516,8 +534,8 @@ const ucf_line_t ispu_conf[] = {
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x9B },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x01 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x0C },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x00 },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x03 },
+	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xF8 },
+	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x02 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xEF },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x8B },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xF4 },
@@ -654,7 +672,7 @@ const ucf_line_t ispu_conf[] = {
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xAB },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x01 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x0C },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x38 },
+	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x30 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x03 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x1F },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x89 },
@@ -758,47 +776,41 @@ const ucf_line_t ispu_conf[] = {
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x27 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x17 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xAF },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x4F },
+	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x5F },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x9B },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xF4 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x27 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x38 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xAD },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x5C },
+	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x58 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x68 },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x5F },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x9B },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xF4 },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x27 },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x51 },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xA8 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x6F },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x9B },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xF4 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x27 },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x65 },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xAC },
+	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x28 },
+	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xAD },
+	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x5C },
+	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x68 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x7F },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x9B },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xF4 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x27 },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x71 },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xA8 },
+	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x75 },
+	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xAF },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x8F },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x9B },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xF4 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x27 },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x88 },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xAD },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x54 },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x68 },
+	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x81 },
+	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xA8 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x9F },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x9B },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xF4 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x27 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x98 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xAD },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x50 },
+	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x54 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x68 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xAF },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x9B },
@@ -806,7 +818,7 @@ const ucf_line_t ispu_conf[] = {
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x27 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xA8 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xAD },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x70 },
+	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x50 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x68 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xBF },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x9B },
@@ -814,7 +826,7 @@ const ucf_line_t ispu_conf[] = {
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x27 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xB8 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xAD },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xB8 },
+	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x70 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x68 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xCF },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x9B },
@@ -826,7 +838,7 @@ const ucf_line_t ispu_conf[] = {
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x64 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xC8 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xAD },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x58 },
+	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xB8 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x68 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x00 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x90 },
@@ -846,70 +858,68 @@ const ucf_line_t ispu_conf[] = {
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x93 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x60 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x00 },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x1C },
+	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x13 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x9B },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x73 },
+	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x82 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x98 },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x0A },
+	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x0B },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x8B },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x00 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x13 },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x0B },
+	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x0C },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x9B },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x0B },
+	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x0C },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x8B },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x07 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xA7 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xFE },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xD3 },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x20 },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x83 },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x60 },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x00 },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x2C },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x9B },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x29 },
+	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x6A },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x8B },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x40 },
+	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x50 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x83 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x60 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x00 },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x24 },
+	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x65 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x53 },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x02 },
+	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x06 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x23 },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x02 },
+	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x06 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x63 },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x28 },
+	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x68 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xAC },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x1F },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x00 },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x02 },
+	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x06 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xB3 },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x28 },
+	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x69 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x8B },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x40 },
+	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x50 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x83 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x60 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x00 },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x24 },
+	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x65 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x53 },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x27 },
+	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x67 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xA7 },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x05 },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xD2 },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x25 },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xA8 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x02 },
+	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xD0 },
+	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x67 },
+	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xAB },
+	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x06 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x60 },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x03 },
+	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x60 },
+	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x83 },
+	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x60 },
+	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x00 },
+	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x63 },
+	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x9B },
+	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x02 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x98 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xDF },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xDD },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x26 },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xA8 },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xFC },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xDD },
+	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x00 },
+	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x00 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xF4 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x27 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x30 },
@@ -1064,7 +1074,7 @@ const ucf_line_t ispu_conf[] = {
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x00 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x01 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x83 },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xCC },
+	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xC4 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x03 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x10 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xAB },
@@ -1084,7 +1094,7 @@ const ucf_line_t ispu_conf[] = {
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xAB },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x01 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x0C },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xB0 },
+	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xA8 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x03 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x36 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xAF },
@@ -1098,7 +1108,7 @@ const ucf_line_t ispu_conf[] = {
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x9B },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x01 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x0C },
-	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xC8 },
+	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xC0 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x03 },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0xEF },
 	{ .op = MEMS_UCF_OP_WRITE, .address = 0x0B, .data = 0x8B },

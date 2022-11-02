@@ -2,7 +2,7 @@
   ******************************************************************************
   * File Name          : app_x-cube-ispu.h
   * Description        : This file provides code for the configuration
-  *                      of the STMicroelectronics.X-CUBE-ISPU.1.0.0 instances.
+  *                      of the STMicroelectronics.X-CUBE-ISPU.1.1.0 instances.
   ******************************************************************************
   * @attention
   *

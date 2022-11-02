@@ -16,6 +16,8 @@ The X-CUBE-ISPU is an expansion software package for STM32Cube. This software is
 
 - Sample applications to upload json/ucf pair of files to ISPU device and transmit real time ISPU, inertial and environmental sensors data to a PC
 
+- Sample applications to use library generated from NEAI Studio and send data to a PC terminal application
+
 - Compatible with the Unicleo-GUI graphical user interface to display sensors data and configure outputs
 
 - Sample implementation available on X-NUCLEO-IKS01A3 or X-NUCLEO-IKS02A1 expansion boards connected to a NUCLEO-F401RE or NUCLEO-L476RG development board with ISPU device in DIL24 adapter board and on CUSTOM boards with ISPU sensor only

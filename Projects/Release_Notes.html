@@ -5,44 +5,63 @@
   <meta name="generator" content="pandoc" />
   <meta name="viewport" content="width=device-width, initial-scale=1.0, user-scalable=yes" />
   <title>Release Notes for X-CUBE-ISPU Projects</title>
-  <style type="text/css">
-      code{white-space: pre-wrap;}
-      span.smallcaps{font-variant: small-caps;}
-      span.underline{text-decoration: underline;}
-      div.column{display: inline-block; vertical-align: top; width: 50%;}
+  <style>
+    code{white-space: pre-wrap;}
+    span.smallcaps{font-variant: small-caps;}
+    div.columns{display: flex; gap: min(4vw, 1.5em);}
+    div.column{flex: auto; overflow-x: auto;}
+    div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
+    ul.task-list{list-style: none;}
+    ul.task-list li input[type="checkbox"] {
+      width: 0.8em;
+      margin: 0 0.8em 0.2em -1.6em;
+      vertical-align: middle;
+    }
+    .display.math{display: block; text-align: center; margin: 0.5rem auto;}
   </style>
   <link rel="stylesheet" href="../_htmresc/mini-st_2020.css" />
+  <link rel="icon" type="image/x-icon" href="../_htmresc/favicon.png" />
   <!--[if lt IE 9]>
     <script src="//cdnjs.cloudflare.com/ajax/libs/html5shiv/3.7.3/html5shiv-printshiv.min.js"></script>
   <![endif]-->
-  <link rel="icon" type="image/x-icon" href="../_htmresc/favicon.png" />
 </head>
 <body>
 <div class="row">
 <div class="col-sm-12 col-lg-4">
 <center>
-<h1 id="release-notes-for-x-cube-ispu-projects">Release Notes for <mark>X-CUBE-ISPU</mark> Projects</h1>
+<h1 id="release-notes-for-x-cube-ispu-projects">Release Notes for
+<mark>X-CUBE-ISPU</mark> Projects</h1>
 <p>Copyright © 2022 STMicroelectronics<br />
 </p>
-<a href="https://www.st.com" class="logo"><img src="../_htmresc/st_logo_2020.png" alt="ST logo" /></a>
+<a href="https://www.st.com" class="logo"><img
+src="../_htmresc/st_logo_2020.png" alt="ST logo" /></a>
 </center>
 <h1 id="purpose">Purpose</h1>
-<p>The <mark>X-CUBE-ISPU</mark> Projects provide examples and applications to aid understanding how to develop an application using the middlewares and drivers for the MEMS devices. Most projects include STM32CubeMX project file (.ioc) for the graphical visualization of the STM32 microcontroller pins, peripherals and middlewares configuration.</p>
+<p>The <mark>X-CUBE-ISPU</mark> Projects provide examples and
+applications to aid understanding how to develop an application using
+the middlewares and drivers for the MEMS devices. Most projects include
+STM32CubeMX project file (.ioc) for the graphical visualization of the
+STM32 microcontroller pins, peripherals and middlewares
+configuration.</p>
 </div>
-<div class="col-sm-12 col-lg-8">
-<h1 id="update-history">Update History</h1>
+<section id="update-history" class="col-sm-12 col-lg-8">
+<h1>Update History</h1>
 <div class="collapse">
-<input type="checkbox" id="collapse-section1" checked aria-hidden="true"> <label for="collapse-section1" aria-hidden="true">V1.0.0 / 31-July-2022</label>
+<input type="checkbox" id="collapse-section2" checked aria-hidden="true">
+<label for="collapse-section2" aria-hidden="true">V1.1.0 /
+31-October-2022</label>
 <div>
 <h2 id="main-changes">Main Changes</h2>
-<h3 id="first-release">First release</h3>
+<h3 id="maintenance-release">Maintenance release</h3>
 <ul>
-<li>First official release</li>
-<li>Regenerate the source code with CubeMX v6.6.0 and ISPU pack v1.0.0</li>
-<li>Add new sensors: ISM330IS, LSM6DSO16IS</li>
+<li>Regenerate the source code with CubeMX v6.6.1 and ISPU pack
+v1.1.0</li>
+<li>Add new examples: NEAI_AnomalyDetection</li>
 </ul>
 <h2 id="contents">Contents</h2>
-<p><small>The components flagged by “<span class="icon-st-update"></span>” have changed since the previous release. “<span class="icon-st-add"></span>” are new.</small></p>
+<p><small>The components flagged by “<span
+class="icon-st-update"></span>” have changed since the previous release.
+“<span class="icon-st-add"></span>” are new.</small></p>
 <p>Projects</p>
 <table>
 <thead>
@@ -59,93 +78,155 @@
 <td style="text-align: left;">NUCLEO-F401RE</td>
 <td style="text-align: left;">Example</td>
 <td style="text-align: left;">CUSTOM</td>
-<td style="text-align: left;"><a href="NUCLEO-F401RE\Examples\CUSTOM\ISM330IS_DataLogExtended">ISM330IS_DataLogExtended</a></td>
-<td style="text-align: left;"><a href="NUCLEO-F401RE\Examples\CUSTOM\ISM330IS_DataLogExtended\readme.txt">readme</a></td>
+<td style="text-align: left;"><a
+href="NUCLEO-F401RE\Examples\CUSTOM\ISM330IS_DataLogExtended">ISM330IS_DataLogExtended</a></td>
+<td style="text-align: left;"><a
+href="NUCLEO-F401RE\Examples\CUSTOM\ISM330IS_DataLogExtended\readme.html">readme</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">NUCLEO-F401RE</td>
 <td style="text-align: left;">Example</td>
 <td style="text-align: left;">CUSTOM</td>
-<td style="text-align: left;"><a href="NUCLEO-F401RE\Examples\CUSTOM\LSM6DSO16IS_DataLogExtended">LSM6DSO16IS_DataLogExtended</a></td>
-<td style="text-align: left;"><a href="NUCLEO-F401RE\Examples\CUSTOM\LSM6DSO16IS_DataLogExtended\readme.txt">readme</a></td>
+<td style="text-align: left;"><a
+href="NUCLEO-F401RE\Examples\CUSTOM\ISM330ISN_NEAI_AnomalyDetection">ISM330ISN_NEAI_AnomalyDetection</a></td>
+<td style="text-align: left;"><a
+href="NUCLEO-F401RE\Examples\CUSTOM\ISM330ISN_NEAI_AnomalyDetection\readme.html">readme</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F401RE</td>
+<td style="text-align: left;">Example</td>
+<td style="text-align: left;">CUSTOM</td>
+<td style="text-align: left;"><a
+href="NUCLEO-F401RE\Examples\CUSTOM\LSM6DSO16IS_DataLogExtended">LSM6DSO16IS_DataLogExtended</a></td>
+<td style="text-align: left;"><a
+href="NUCLEO-F401RE\Examples\CUSTOM\LSM6DSO16IS_DataLogExtended\readme.html">readme</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-F401RE</td>
+<td style="text-align: left;">Example</td>
+<td style="text-align: left;">CUSTOM</td>
+<td style="text-align: left;"><a
+href="NUCLEO-F401RE\Examples\CUSTOM\LSM6DSO16ISN_NEAI_AnomalyDetection">LSM6DSO16ISN_NEAI_AnomalyDetection</a></td>
+<td style="text-align: left;"><a
+href="NUCLEO-F401RE\Examples\CUSTOM\LSM6DSO16ISN_NEAI_AnomalyDetection\readme.html">readme</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">NUCLEO-F401RE</td>
 <td style="text-align: left;">Example</td>
 <td style="text-align: left;">X-NUCLEO-IKS01A3</td>
-<td style="text-align: left;"><a href="NUCLEO-F401RE\Examples\IKS01A3\ISM330IS_DataLogExtended">ISM330IS_DataLogExtended</a></td>
-<td style="text-align: left;"><a href="NUCLEO-F401RE\Examples\IKS01A3\ISM330IS_DataLogExtended\readme.txt">readme</a></td>
+<td style="text-align: left;"><a
+href="NUCLEO-F401RE\Examples\IKS01A3\ISM330IS_DataLogExtended">ISM330IS_DataLogExtended</a></td>
+<td style="text-align: left;"><a
+href="NUCLEO-F401RE\Examples\IKS01A3\ISM330IS_DataLogExtended\readme.html">readme</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">NUCLEO-F401RE</td>
 <td style="text-align: left;">Example</td>
 <td style="text-align: left;">X-NUCLEO-IKS01A3</td>
-<td style="text-align: left;"><a href="NUCLEO-F401RE\Examples\IKS01A3\LSM6DSO16IS_DataLogExtended">LSM6DSO16IS_DataLogExtended</a></td>
-<td style="text-align: left;"><a href="NUCLEO-F401RE\Examples\IKS01A3\LSM6DSO16IS_DataLogExtended\readme.txt">readme</a></td>
+<td style="text-align: left;"><a
+href="NUCLEO-F401RE\Examples\IKS01A3\LSM6DSO16IS_DataLogExtended">LSM6DSO16IS_DataLogExtended</a></td>
+<td style="text-align: left;"><a
+href="NUCLEO-F401RE\Examples\IKS01A3\LSM6DSO16IS_DataLogExtended\readme.html">readme</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">NUCLEO-F401RE</td>
 <td style="text-align: left;">Example</td>
 <td style="text-align: left;">X-NUCLEO-IKS02A1</td>
-<td style="text-align: left;"><a href="NUCLEO-F401RE\Examples\IKS02A1\ISM330IS_DataLogExtended">ISM330IS_DataLogExtended</a></td>
-<td style="text-align: left;"><a href="NUCLEO-F401RE\Examples\IKS02A1\ISM330IS_DataLogExtended\readme.txt">readme</a></td>
+<td style="text-align: left;"><a
+href="NUCLEO-F401RE\Examples\IKS02A1\ISM330IS_DataLogExtended">ISM330IS_DataLogExtended</a></td>
+<td style="text-align: left;"><a
+href="NUCLEO-F401RE\Examples\IKS02A1\ISM330IS_DataLogExtended\readme.html">readme</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">NUCLEO-F401RE</td>
 <td style="text-align: left;">Example</td>
 <td style="text-align: left;">X-NUCLEO-IKS02A1</td>
-<td style="text-align: left;"><a href="NUCLEO-F401RE\Examples\IKS02A1\LSM6DSO16IS_DataLogExtended">LSM6DSO16IS_DataLogExtended</a></td>
-<td style="text-align: left;"><a href="NUCLEO-F401RE\Examples\IKS02A1\LSM6DSO16IS_DataLogExtended\readme.txt">readme</a></td>
+<td style="text-align: left;"><a
+href="NUCLEO-F401RE\Examples\IKS02A1\LSM6DSO16IS_DataLogExtended">LSM6DSO16IS_DataLogExtended</a></td>
+<td style="text-align: left;"><a
+href="NUCLEO-F401RE\Examples\IKS02A1\LSM6DSO16IS_DataLogExtended\readme.html">readme</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">NUCLEO-L476RG</td>
 <td style="text-align: left;">Example</td>
 <td style="text-align: left;">CUSTOM</td>
-<td style="text-align: left;"><a href="NUCLEO-L476RG\Examples\IKS01A2\ISM330IS_DataLogExtended">ISM330IS_DataLogExtended</a></td>
-<td style="text-align: left;"><a href="NUCLEO-L476RG\Examples\IKS01A2\ISM330IS_DataLogExtended\readme.txt">readme</a></td>
+<td style="text-align: left;"><a
+href="NUCLEO-L476RG\Examples\CUSTOM\ISM330IS_DataLogExtended">ISM330IS_DataLogExtended</a></td>
+<td style="text-align: left;"><a
+href="NUCLEO-L476RG\Examples\CUSTOM\ISM330IS_DataLogExtended\readme.html">readme</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">NUCLEO-L476RG</td>
 <td style="text-align: left;">Example</td>
 <td style="text-align: left;">CUSTOM</td>
-<td style="text-align: left;"><a href="NUCLEO-L476RG\Examples\IKS01A2\LSM6DSO16IS_DataLogExtended">LSM6DSO16IS_DataLogExtended</a></td>
-<td style="text-align: left;"><a href="NUCLEO-L476RG\Examples\IKS01A2\LSM6DSO16IS_DataLogExtended\readme.txt">readme</a></td>
+<td style="text-align: left;"><a
+href="NUCLEO-L476RG\Examples\CUSTOM\ISM330ISN_NEAI_AnomalyDetection">ISM330ISN_NEAI_AnomalyDetection</a></td>
+<td style="text-align: left;"><a
+href="NUCLEO-L476RG\Examples\CUSTOM\ISM330ISN_NEAI_AnomalyDetection\readme.html">readme</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-L476RG</td>
+<td style="text-align: left;">Example</td>
+<td style="text-align: left;">CUSTOM</td>
+<td style="text-align: left;"><a
+href="NUCLEO-L476RG\Examples\CUSTOM\LSM6DSO16IS_DataLogExtended">LSM6DSO16IS_DataLogExtended</a></td>
+<td style="text-align: left;"><a
+href="NUCLEO-L476RG\Examples\CUSTOM\LSM6DSO16IS_DataLogExtended\readme.html">readme</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-L476RG</td>
+<td style="text-align: left;">Example</td>
+<td style="text-align: left;">CUSTOM</td>
+<td style="text-align: left;"><a
+href="NUCLEO-L476RG\Examples\CUSTOM\LSM6DSO16ISN_NEAI_AnomalyDetection">LSM6DSO16ISN_NEAI_AnomalyDetection</a></td>
+<td style="text-align: left;"><a
+href="NUCLEO-L476RG\Examples\CUSTOM\LSM6DSO16ISN_NEAI_AnomalyDetection\readme.html">readme</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">NUCLEO-L476RG</td>
 <td style="text-align: left;">Example</td>
 <td style="text-align: left;">X-NUCLEO-IKS01A3</td>
-<td style="text-align: left;"><a href="NUCLEO-L476RG\Examples\IKS01A3\ISM330IS_DataLogExtended">ISM330IS_DataLogExtended</a></td>
-<td style="text-align: left;"><a href="NUCLEO-L476RG\Examples\IKS01A3\ISM330IS_DataLogExtended\readme.txt">readme</a></td>
+<td style="text-align: left;"><a
+href="NUCLEO-L476RG\Examples\IKS01A3\ISM330IS_DataLogExtended">ISM330IS_DataLogExtended</a></td>
+<td style="text-align: left;"><a
+href="NUCLEO-L476RG\Examples\IKS01A3\ISM330IS_DataLogExtended\readme.html">readme</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">NUCLEO-L476RG</td>
 <td style="text-align: left;">Example</td>
 <td style="text-align: left;">X-NUCLEO-IKS01A3</td>
-<td style="text-align: left;"><a href="NUCLEO-L476RG\Examples\IKS01A3\LSM6DSO16IS_DataLogExtended">LSM6DSO16IS_DataLogExtended</a></td>
-<td style="text-align: left;"><a href="NUCLEO-L476RG\Examples\IKS01A3\LSM6DSO16IS_DataLogExtended\readme.txt">readme</a></td>
+<td style="text-align: left;"><a
+href="NUCLEO-L476RG\Examples\IKS01A3\LSM6DSO16IS_DataLogExtended">LSM6DSO16IS_DataLogExtended</a></td>
+<td style="text-align: left;"><a
+href="NUCLEO-L476RG\Examples\IKS01A3\LSM6DSO16IS_DataLogExtended\readme.html">readme</a></td>
 </tr>
 <tr class="odd">
 <td style="text-align: left;">NUCLEO-L476RG</td>
 <td style="text-align: left;">Example</td>
 <td style="text-align: left;">X-NUCLEO-IKS02A1</td>
-<td style="text-align: left;"><a href="NUCLEO-L476RG\Examples\IKS02A1\ISM330IS_DataLogExtended">ISM330IS_DataLogExtended</a></td>
-<td style="text-align: left;"><a href="NUCLEO-L476RG\Examples\IKS02A1\ISM330IS_DataLogExtended\readme.txt">readme</a></td>
+<td style="text-align: left;"><a
+href="NUCLEO-L476RG\Examples\IKS02A1\ISM330IS_DataLogExtended">ISM330IS_DataLogExtended</a></td>
+<td style="text-align: left;"><a
+href="NUCLEO-L476RG\Examples\IKS02A1\ISM330IS_DataLogExtended\readme.html">readme</a></td>
 </tr>
 <tr class="even">
 <td style="text-align: left;">NUCLEO-L476RG</td>
 <td style="text-align: left;">Example</td>
 <td style="text-align: left;">X-NUCLEO-IKS02A1</td>
-<td style="text-align: left;"><a href="NUCLEO-L476RG\Examples\IKS02A1\LSM6DSO16IS_DataLogExtended">LSM6DSO16IS_DataLogExtended</a></td>
-<td style="text-align: left;"><a href="NUCLEO-L476RG\Examples\IKS02A1\LSM6DSO16IS_DataLogExtended\readme.txt">readme</a></td>
+<td style="text-align: left;"><a
+href="NUCLEO-L476RG\Examples\IKS02A1\LSM6DSO16IS_DataLogExtended">LSM6DSO16IS_DataLogExtended</a></td>
+<td style="text-align: left;"><a
+href="NUCLEO-L476RG\Examples\IKS02A1\LSM6DSO16IS_DataLogExtended\readme.html">readme</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="development-toolchains-and-compilers">Development Toolchains and Compilers</h2>
+<h2 id="development-toolchains-and-compilers">Development Toolchains and
+Compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain V9.20.1</li>
-<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain V5.37.0</li>
-<li>STM32CubeIDE V1.9.0</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain
+V5.37.0</li>
+<li>STM32CubeIDE V1.10.1</li>
 </ul>
 <h2 id="supported-devices-and-boards">Supported Devices and Boards</h2>
 <ul>
@@ -159,12 +240,174 @@
 </ul>
 </div>
 </div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section1" aria-hidden="true">
+<label for="collapse-section1" aria-hidden="true">V1.0.0 /
+31-July-2022</label>
+<div>
+<h2 id="main-changes-1">Main Changes</h2>
+<h3 id="first-release">First release</h3>
+<ul>
+<li>First official release</li>
+<li>Regenerate the source code with CubeMX v6.6.0 and ISPU pack
+v1.0.0</li>
+<li>Add new sensors: ISM330IS, LSM6DSO16IS</li>
+</ul>
+<h2 id="contents-1">Contents</h2>
+<p><small>The components flagged by “<span
+class="icon-st-update"></span>” have changed since the previous release.
+“<span class="icon-st-add"></span>” are new.</small></p>
+<p>Projects</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Board/Device</th>
+<th style="text-align: left;">Category</th>
+<th style="text-align: left;">Expansion Board/Device</th>
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Description</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F401RE</td>
+<td style="text-align: left;">Example</td>
+<td style="text-align: left;">CUSTOM</td>
+<td style="text-align: left;"><a
+href="NUCLEO-F401RE\Examples\CUSTOM\ISM330IS_DataLogExtended">ISM330IS_DataLogExtended</a></td>
+<td style="text-align: left;"><a
+href="NUCLEO-F401RE\Examples\CUSTOM\ISM330IS_DataLogExtended\readme.txt">readme</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-F401RE</td>
+<td style="text-align: left;">Example</td>
+<td style="text-align: left;">CUSTOM</td>
+<td style="text-align: left;"><a
+href="NUCLEO-F401RE\Examples\CUSTOM\LSM6DSO16IS_DataLogExtended">LSM6DSO16IS_DataLogExtended</a></td>
+<td style="text-align: left;"><a
+href="NUCLEO-F401RE\Examples\CUSTOM\LSM6DSO16IS_DataLogExtended\readme.txt">readme</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F401RE</td>
+<td style="text-align: left;">Example</td>
+<td style="text-align: left;">X-NUCLEO-IKS01A3</td>
+<td style="text-align: left;"><a
+href="NUCLEO-F401RE\Examples\IKS01A3\ISM330IS_DataLogExtended">ISM330IS_DataLogExtended</a></td>
+<td style="text-align: left;"><a
+href="NUCLEO-F401RE\Examples\IKS01A3\ISM330IS_DataLogExtended\readme.txt">readme</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-F401RE</td>
+<td style="text-align: left;">Example</td>
+<td style="text-align: left;">X-NUCLEO-IKS01A3</td>
+<td style="text-align: left;"><a
+href="NUCLEO-F401RE\Examples\IKS01A3\LSM6DSO16IS_DataLogExtended">LSM6DSO16IS_DataLogExtended</a></td>
+<td style="text-align: left;"><a
+href="NUCLEO-F401RE\Examples\IKS01A3\LSM6DSO16IS_DataLogExtended\readme.txt">readme</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-F401RE</td>
+<td style="text-align: left;">Example</td>
+<td style="text-align: left;">X-NUCLEO-IKS02A1</td>
+<td style="text-align: left;"><a
+href="NUCLEO-F401RE\Examples\IKS02A1\ISM330IS_DataLogExtended">ISM330IS_DataLogExtended</a></td>
+<td style="text-align: left;"><a
+href="NUCLEO-F401RE\Examples\IKS02A1\ISM330IS_DataLogExtended\readme.txt">readme</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-F401RE</td>
+<td style="text-align: left;">Example</td>
+<td style="text-align: left;">X-NUCLEO-IKS02A1</td>
+<td style="text-align: left;"><a
+href="NUCLEO-F401RE\Examples\IKS02A1\LSM6DSO16IS_DataLogExtended">LSM6DSO16IS_DataLogExtended</a></td>
+<td style="text-align: left;"><a
+href="NUCLEO-F401RE\Examples\IKS02A1\LSM6DSO16IS_DataLogExtended\readme.txt">readme</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-L476RG</td>
+<td style="text-align: left;">Example</td>
+<td style="text-align: left;">CUSTOM</td>
+<td style="text-align: left;"><a
+href="NUCLEO-L476RG\Examples\IKS01A2\ISM330IS_DataLogExtended">ISM330IS_DataLogExtended</a></td>
+<td style="text-align: left;"><a
+href="NUCLEO-L476RG\Examples\IKS01A2\ISM330IS_DataLogExtended\readme.txt">readme</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-L476RG</td>
+<td style="text-align: left;">Example</td>
+<td style="text-align: left;">CUSTOM</td>
+<td style="text-align: left;"><a
+href="NUCLEO-L476RG\Examples\IKS01A2\LSM6DSO16IS_DataLogExtended">LSM6DSO16IS_DataLogExtended</a></td>
+<td style="text-align: left;"><a
+href="NUCLEO-L476RG\Examples\IKS01A2\LSM6DSO16IS_DataLogExtended\readme.txt">readme</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-L476RG</td>
+<td style="text-align: left;">Example</td>
+<td style="text-align: left;">X-NUCLEO-IKS01A3</td>
+<td style="text-align: left;"><a
+href="NUCLEO-L476RG\Examples\IKS01A3\ISM330IS_DataLogExtended">ISM330IS_DataLogExtended</a></td>
+<td style="text-align: left;"><a
+href="NUCLEO-L476RG\Examples\IKS01A3\ISM330IS_DataLogExtended\readme.txt">readme</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-L476RG</td>
+<td style="text-align: left;">Example</td>
+<td style="text-align: left;">X-NUCLEO-IKS01A3</td>
+<td style="text-align: left;"><a
+href="NUCLEO-L476RG\Examples\IKS01A3\LSM6DSO16IS_DataLogExtended">LSM6DSO16IS_DataLogExtended</a></td>
+<td style="text-align: left;"><a
+href="NUCLEO-L476RG\Examples\IKS01A3\LSM6DSO16IS_DataLogExtended\readme.txt">readme</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">NUCLEO-L476RG</td>
+<td style="text-align: left;">Example</td>
+<td style="text-align: left;">X-NUCLEO-IKS02A1</td>
+<td style="text-align: left;"><a
+href="NUCLEO-L476RG\Examples\IKS02A1\ISM330IS_DataLogExtended">ISM330IS_DataLogExtended</a></td>
+<td style="text-align: left;"><a
+href="NUCLEO-L476RG\Examples\IKS02A1\ISM330IS_DataLogExtended\readme.txt">readme</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">NUCLEO-L476RG</td>
+<td style="text-align: left;">Example</td>
+<td style="text-align: left;">X-NUCLEO-IKS02A1</td>
+<td style="text-align: left;"><a
+href="NUCLEO-L476RG\Examples\IKS02A1\LSM6DSO16IS_DataLogExtended">LSM6DSO16IS_DataLogExtended</a></td>
+<td style="text-align: left;"><a
+href="NUCLEO-L476RG\Examples\IKS02A1\LSM6DSO16IS_DataLogExtended\readme.txt">readme</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="development-toolchains-and-compilers-1">Development Toolchains
+and Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain V9.20.1</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain
+V5.37.0</li>
+<li>STM32CubeIDE V1.9.0</li>
+</ul>
+<h2 id="supported-devices-and-boards-1">Supported Devices and
+Boards</h2>
+<ul>
+<li>STM32F401RE and STM32L476RG devices</li>
+<li>NUCLEO-F401RE Board RevC</li>
+<li>NUCLEO-L476RG Board RevC</li>
+<li>X-NUCLEO-IKS01A3</li>
+<li>X-NUCLEO-IKS02A1</li>
+<li>ISM330IS</li>
+<li>LSM6DSO16IS</li>
+</ul>
 </div>
+</div>
+</section>
 </div>
 <footer class="sticky">
 <div class="columns">
 <div class="column" style="width:95%;">
-<p>For complete documentation on <strong>X-CUBE-ISPU</strong> , visit: <a href="https://www.st.com/content/st_com/en/products/embedded-software/mcu-mpu-embedded-software/stm32-embedded-software/stm32cube-expansion-packages/x-cube-ispu.html">www.st.com</a></p>
+<p>For complete documentation on <strong>X-CUBE-ISPU</strong> , visit:
+<a
+href="https://www.st.com/content/st_com/en/products/embedded-software/mcu-mpu-embedded-software/stm32-embedded-software/stm32cube-expansion-packages/x-cube-ispu.html">www.st.com</a></p>
 </div><div class="column" style="width:5%;">
 <p><abbr title="Based on template cx566953 version 2.0">Info</abbr></p>
 </div>
