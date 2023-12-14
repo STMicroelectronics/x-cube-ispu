@@ -356,11 +356,11 @@
           <state>$PROJ_DIR$/../../../../../../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy</state>
           <state>$PROJ_DIR$/../../../../../../Drivers/CMSIS/Device/ST/STM32F4xx/Include</state>
           <state>$PROJ_DIR$/../../../../../../Drivers/CMSIS/Include</state>
-          <state>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/lsm6dso16is</state>
-          <state>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/Common</state>
           <state>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/lis2mdl</state>
           <state>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/hts221</state>
           <state>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/lps22hh</state>
+          <state>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/Common</state>
+          <state>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/lsm6dso16is</state>
         </option>
         <option>
           <name>CCStdIncCheck</name>
@@ -1148,12 +1148,6 @@
       <group>
         <name>Components</name>
         <file>
-          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/lsm6dso16is/lsm6dso16is_reg.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/lsm6dso16is/lsm6dso16is.c</name>
-        </file>
-        <file>
           <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/lis2mdl/lis2mdl_reg.c</name>
         </file>
         <file>
@@ -1170,6 +1164,12 @@
         </file>
         <file>
           <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/lps22hh/lps22hh.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/lsm6dso16is/lsm6dso16is_reg.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/lsm6dso16is/lsm6dso16is.c</name>
         </file>
       </group>
     </group>

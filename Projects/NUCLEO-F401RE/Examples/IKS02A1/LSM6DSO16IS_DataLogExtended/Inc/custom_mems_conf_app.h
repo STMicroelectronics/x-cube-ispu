@@ -1,12 +1,12 @@
 /**
   ******************************************************************************
   * @file    custom_mems_conf_app.h
-  * @author  MEMS Application Team
+  * @author  MEMS Software Solutions Team
   * @brief   Custom sensor configuration file
   ******************************************************************************
   * @attention
   *
-  * Copyright (c) 2022 STMicroelectronics.
+  * Copyright (c) 2023 STMicroelectronics.
   * All rights reserved.
   *
   * This software is licensed under terms that can be found in the LICENSE file
@@ -17,8 +17,8 @@
   */
 
 /* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef __CUSTOM_MEMS_CONF_APP_H__
-#define __CUSTOM_MEMS_CONF_APP_H__
+#ifndef CUSTOM_MEMS_CONF_APP_H
+#define CUSTOM_MEMS_CONF_APP_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -766,8 +766,225 @@ extern "C" {
   #endif
 #endif
 
+#ifdef USE_CUSTOM_MOTION_SENSOR_LSM6DSV16X_0
+  #if (USE_CUSTOM_MOTION_SENSOR_LSM6DSV16X_0 == 1)
+    #ifndef CUSTOM_ACC_INSTANCE_0
+      #define CUSTOM_ACC_INSTANCE_0 CUSTOM_LSM6DSV16X_0
+      #define CUSTOM_ACC_INSTANCE_NAME_0 "LSM6DSV16X"
+      #define CUSTOM_ACC_INSTANCE_ODR_0 {12, 1.875, 7.5, 15, 30, 60, 120, 240, 480, 960, 1920, 3840, 7680} /* Hz */
+      #define CUSTOM_ACC_INSTANCE_FS_0 {4, 2, 4, 8, 16} /* g */
+      #ifndef ACC_GYR_UNICLEO_ID
+        #define ACC_GYR_UNICLEO_ID LSM6DSV16X_UNICLEO_ID
+      #endif
+    #endif
+    #ifndef CUSTOM_GYR_INSTANCE_0
+      #define CUSTOM_GYR_INSTANCE_0 CUSTOM_LSM6DSV16X_0
+      #define CUSTOM_GYR_INSTANCE_NAME_0 "LSM6DSV16X"
+      #define CUSTOM_GYR_INSTANCE_ODR_0 {11, 7.5, 15, 30, 60, 120, 240, 480, 960, 1920, 3840, 7680} /* Hz */
+      #define CUSTOM_GYR_INSTANCE_FS_0 {6, 125, 250, 500, 1000, 2000, 4000} /* dps */
+      #ifndef ACC_GYR_UNICLEO_ID
+        #define ACC_GYR_UNICLEO_ID LSM6DSV16X_UNICLEO_ID
+      #endif
+    #endif
+  #endif
+#endif
+
+#ifdef USE_CUSTOM_MOTION_SENSOR_LSM6DSV16BX_0
+  #if (USE_CUSTOM_MOTION_SENSOR_LSM6DSV16BX_0 == 1)
+    #ifndef CUSTOM_ACC_INSTANCE_0
+      #define CUSTOM_ACC_INSTANCE_0 CUSTOM_LSM6DSV16BX_0
+      #define CUSTOM_ACC_INSTANCE_NAME_0 "LSM6DSV16BX"
+      #define CUSTOM_ACC_INSTANCE_ODR_0 {12, 1.875, 7.5, 15, 30, 60, 120, 240, 480, 960, 1920, 3840, 7680} /* Hz */
+      #define CUSTOM_ACC_INSTANCE_FS_0 {4, 2, 4, 8, 16} /* g */
+      #ifndef ACC_GYR_UNICLEO_ID
+        #define ACC_GYR_UNICLEO_ID LSM6DSV16BX_UNICLEO_ID
+      #endif
+    #endif
+    #ifndef CUSTOM_GYR_INSTANCE_0
+      #define CUSTOM_GYR_INSTANCE_0 CUSTOM_LSM6DSV16BX_0
+      #define CUSTOM_GYR_INSTANCE_NAME_0 "LSM6DSV16BX"
+      #define CUSTOM_GYR_INSTANCE_ODR_0 {11, 7.5, 15, 30, 60, 120, 240, 480, 960, 1920, 3840, 7680} /* Hz */
+      #define CUSTOM_GYR_INSTANCE_FS_0 {6, 125, 250, 500, 1000, 2000, 4000} /* dps */
+      #ifndef ACC_GYR_UNICLEO_ID
+        #define ACC_GYR_UNICLEO_ID LSM6DSV16BX_UNICLEO_ID
+      #endif
+    #endif
+  #endif
+#endif
+
+#ifdef USE_CUSTOM_MOTION_SENSOR_LSM6DSV_0
+  #if (USE_CUSTOM_MOTION_SENSOR_LSM6DSV_0 == 1)
+    #ifndef CUSTOM_ACC_INSTANCE_0
+      #define CUSTOM_ACC_INSTANCE_0 CUSTOM_LSM6DSV_0
+      #define CUSTOM_ACC_INSTANCE_NAME_0 "LSM6DSV"
+      #define CUSTOM_ACC_INSTANCE_ODR_0 {12, 1.875, 7.5, 15, 30, 60, 120, 240, 480, 960, 1920, 3840, 7680} /* Hz */
+      #define CUSTOM_ACC_INSTANCE_FS_0 {4, 2, 4, 8, 16} /* g */
+      #ifndef ACC_GYR_UNICLEO_ID
+        #define ACC_GYR_UNICLEO_ID LSM6DSV_UNICLEO_ID
+      #endif
+    #endif
+    #ifndef CUSTOM_GYR_INSTANCE_0
+      #define CUSTOM_GYR_INSTANCE_0 CUSTOM_LSM6DSV_0
+      #define CUSTOM_GYR_INSTANCE_NAME_0 "LSM6DSV"
+      #define CUSTOM_GYR_INSTANCE_ODR_0 {11, 7.5, 15, 30, 60, 120, 240, 480, 960, 1920, 3840, 7680} /* Hz */
+      #define CUSTOM_GYR_INSTANCE_FS_0 {6, 125, 250, 500, 1000, 2000, 4000} /* dps */
+      #ifndef ACC_GYR_UNICLEO_ID
+        #define ACC_GYR_UNICLEO_ID LSM6DSV_UNICLEO_ID
+      #endif
+    #endif
+  #endif
+#endif
+
+#ifdef USE_CUSTOM_MOTION_SENSOR_LSM6DSV16B_0
+  #if (USE_CUSTOM_MOTION_SENSOR_LSM6DSV16B_0 == 1)
+    #ifndef CUSTOM_ACC_INSTANCE_0
+      #define CUSTOM_ACC_INSTANCE_0 CUSTOM_LSM6DSV16B_0
+      #define CUSTOM_ACC_INSTANCE_NAME_0 "LSM6DSV16B"
+      #define CUSTOM_ACC_INSTANCE_ODR_0 {12, 1.875, 7.5, 15, 30, 60, 120, 240, 480, 960, 1920, 3840, 7680} /* Hz */
+      #define CUSTOM_ACC_INSTANCE_FS_0 {4, 2, 4, 8, 16} /* g */
+      #ifndef ACC_GYR_UNICLEO_ID
+        #define ACC_GYR_UNICLEO_ID LSM6DSV16B_UNICLEO_ID
+      #endif
+    #endif
+    #ifndef CUSTOM_GYR_INSTANCE_0
+      #define CUSTOM_GYR_INSTANCE_0 CUSTOM_LSM6DSV16B_0
+      #define CUSTOM_GYR_INSTANCE_NAME_0 "LSM6DSV16B"
+      #define CUSTOM_GYR_INSTANCE_ODR_0 {11, 7.5, 15, 30, 60, 120, 240, 480, 960, 1920, 3840, 7680} /* Hz */
+      #define CUSTOM_GYR_INSTANCE_FS_0 {6, 125, 250, 500, 1000, 2000, 4000} /* dps */
+      #ifndef ACC_GYR_UNICLEO_ID
+        #define ACC_GYR_UNICLEO_ID LSM6DSV16B_UNICLEO_ID
+      #endif
+    #endif
+  #endif
+#endif
+
+#ifdef USE_CUSTOM_MOTION_SENSOR_LIS2DUX12_0
+  #if (USE_CUSTOM_MOTION_SENSOR_LIS2DUX12_0 == 1)
+    #ifndef CUSTOM_ACC_INSTANCE_0
+      #define CUSTOM_ACC_INSTANCE_0 CUSTOM_LIS2DUX12_0
+      #define CUSTOM_ACC_INSTANCE_NAME_0 "LIS2DUX12"
+      #define CUSTOM_ACC_INSTANCE_ODR_0 {8, 6, 12.5, 25, 50, 100, 200, 400, 800} /* Hz */
+      #define CUSTOM_ACC_INSTANCE_FS_0 {4, 2, 4, 8, 16} /* g */
+      #ifndef ACC_GYR_UNICLEO_ID
+        #define ACC_GYR_UNICLEO_ID LIS2DUX12_UNICLEO_ID
+      #endif
+    #endif
+  #endif
+#endif
+
+#ifdef USE_CUSTOM_MOTION_SENSOR_LIS2DUXS12_0
+  #if (USE_CUSTOM_MOTION_SENSOR_LIS2DUXS12_0 == 1)
+    #ifndef CUSTOM_ACC_INSTANCE_0
+      #define CUSTOM_ACC_INSTANCE_0 CUSTOM_LIS2DUXS12_0
+      #define CUSTOM_ACC_INSTANCE_NAME_0 "LIS2DUXS12"
+      #define CUSTOM_ACC_INSTANCE_ODR_0 {8, 6, 12.5, 25, 50, 100, 200, 400, 800} /* Hz */
+      #define CUSTOM_ACC_INSTANCE_FS_0 {4, 2, 4, 8, 16} /* g */
+      #ifndef ACC_GYR_UNICLEO_ID
+        #define ACC_GYR_UNICLEO_ID LIS2DUXS12_UNICLEO_ID
+      #endif
+    #endif
+  #endif
+#endif
+
+#ifdef USE_CUSTOM_ENV_SENSOR_SHT40AD1B_0
+  #if (USE_CUSTOM_ENV_SENSOR_SHT40AD1B_0 == 1)
+    #ifndef CUSTOM_HUM_INSTANCE_0
+      #define CUSTOM_HUM_INSTANCE_0 CUSTOM_SHT40AD1B_0
+      #define CUSTOM_HUM_INSTANCE_NAME_0 "SHT40AD1B"
+      #define CUSTOM_HUM_INSTANCE_ODR_0 {0} /* Hz */
+      #define CUSTOM_HUM_INSTANCE_FS_0 {0} /* % */
+      #ifndef HUM_TEMP_UNICLEO_ID
+        #define HUM_TEMP_UNICLEO_ID SHT40AD1B_UNICLEO_ID
+      #endif
+    #endif
+    #ifndef CUSTOM_TEMP_INSTANCE_0
+      #define CUSTOM_TEMP_INSTANCE_0 CUSTOM_SHT40AD1B_0
+      #define CUSTOM_TEMP_INSTANCE_NAME_0 "SHT40AD1B"
+      #define CUSTOM_TEMP_INSTANCE_ODR_0 {0} /* Hz */
+      #define CUSTOM_TEMP_INSTANCE_FS_0 {0} /* C */
+      #ifndef HUM_TEMP_UNICLEO_ID
+        #define HUM_TEMP_UNICLEO_ID SHT40AD1B_UNICLEO_ID
+      #endif
+    #endif
+  #endif
+#endif
+
+#ifdef USE_CUSTOM_ENV_SENSOR_STHS34PF80_0
+  #if (USE_CUSTOM_ENV_SENSOR_STHS34PF80_0 == 1)
+    #ifndef CUSTOM_TEMP_INSTANCE_0
+      #define CUSTOM_TEMP_INSTANCE_0 CUSTOM_STHS34PF80_0
+      #define CUSTOM_TEMP_INSTANCE_NAME_0 "STHS34PF80"
+      #define CUSTOM_TEMP_INSTANCE_ODR_0 {8, 0.25, 0.5, 1, 2, 4, 8, 15, 30} /* Hz */
+      #define CUSTOM_TEMP_INSTANCE_FS_0 {0} /* C */
+      #ifndef HUM_TEMP_UNICLEO_ID
+        #define HUM_TEMP_UNICLEO_ID STHS34PF80_UNICLEO_ID
+      #endif
+    #endif
+  #endif
+#endif
+
+#ifdef USE_CUSTOM_MOTION_SENSOR_LSM6DSV32X_0
+  #if (USE_CUSTOM_MOTION_SENSOR_LSM6DSV32X_0 == 1)
+    #ifndef CUSTOM_ACC_INSTANCE_0
+      #define CUSTOM_ACC_INSTANCE_0 CUSTOM_LSM6DSV32X_0
+      #define CUSTOM_ACC_INSTANCE_NAME_0 "LSM6DSV32X"
+      #define CUSTOM_ACC_INSTANCE_ODR_0 {12, 1.875, 7.5, 15, 30, 60, 120, 240, 480, 960, 1920, 3840, 7680} /* Hz */
+      #define CUSTOM_ACC_INSTANCE_FS_0 {4, 4, 8, 16, 32} /* g */
+      #ifndef ACC_GYR_UNICLEO_ID
+        #define ACC_GYR_UNICLEO_ID LSM6DSV32X_UNICLEO_ID
+      #endif
+    #endif
+    #ifndef CUSTOM_GYR_INSTANCE_0
+      #define CUSTOM_GYR_INSTANCE_0 CUSTOM_LSM6DSV32X_0
+      #define CUSTOM_GYR_INSTANCE_NAME_0 "LSM6DSV32X"
+      #define CUSTOM_GYR_INSTANCE_ODR_0 {11, 7.5, 15, 30, 60, 120, 240, 480, 960, 1920, 3840, 7680} /* Hz */
+      #define CUSTOM_GYR_INSTANCE_FS_0 {6, 125, 250, 500, 1000, 2000, 4000} /* dps */
+      #ifndef ACC_GYR_UNICLEO_ID
+        #define ACC_GYR_UNICLEO_ID LSM6DSV32X_UNICLEO_ID
+      #endif
+    #endif
+  #endif
+#endif
+
+#ifdef USE_CUSTOM_MOTION_SENSOR_LSM6DSO16IS_0
+  #if (USE_CUSTOM_MOTION_SENSOR_LSM6DSO16IS_0 == 1)
+    #ifndef CUSTOM_ACC_INSTANCE_0
+      #define CUSTOM_ACC_INSTANCE_0 CUSTOM_LSM6DSO16IS_0
+      #define CUSTOM_ACC_INSTANCE_NAME_0 "LSM6DSO16IS"
+      #define CUSTOM_ACC_INSTANCE_ODR_0 {10, 12.5, 26, 52, 104, 208, 417, 833, 1667, 3333, 6667} /* Hz */
+      #define CUSTOM_ACC_INSTANCE_FS_0 {4, 2, 4, 8, 16} /* g */
+      #ifndef ACC_GYR_UNICLEO_ID
+        #define ACC_GYR_UNICLEO_ID LSM6DSO16IS_UNICLEO_ID
+      #endif
+    #endif
+    #ifndef CUSTOM_GYR_INSTANCE_0
+      #define CUSTOM_GYR_INSTANCE_0 CUSTOM_LSM6DSO16IS_0
+      #define CUSTOM_GYR_INSTANCE_NAME_0 "LSM6DSO16IS"
+      #define CUSTOM_GYR_INSTANCE_ODR_0 {10, 12.5, 26, 52, 104, 208, 417, 833, 1667, 3333, 6667} /* Hz */
+      #define CUSTOM_GYR_INSTANCE_FS_0 {5, 125, 250, 500, 1000, 2000} /* dps */
+      #ifndef ACC_GYR_UNICLEO_ID
+        #define ACC_GYR_UNICLEO_ID LSM6DSO16IS_UNICLEO_ID
+      #endif
+    #endif
+  #endif
+#endif
+
+#ifdef USE_CUSTOM_ENV_SENSOR_SGP40_0
+  #if (USE_CUSTOM_ENV_SENSOR_SGP40_0 == 1)
+    #ifndef CUSTOM_GAS_INSTANCE_0
+      #define CUSTOM_GAS_INSTANCE_0 CUSTOM_SGP40_0
+      #define CUSTOM_GAS_INSTANCE_NAME_0 "SGP40"
+      #define CUSTOM_GAS_INSTANCE_ODR_0 {0} /* Hz */
+      #define CUSTOM_GAS_INSTANCE_FS_0 {0} /* % */
+      #ifndef GAS_UNICLEO_ID
+        #define GAS_UNICLEO_ID SGP40_UNICLEO_ID
+      #endif
+    #endif
+  #endif
+#endif
+
 #ifdef __cplusplus
 }
 #endif
 
-#endif /* __CUSTOM_MEMS_CONF_APP_H__ */
+#endif /* CUSTOM_MEMS_CONF_APP_H */

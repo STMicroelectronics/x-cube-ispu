@@ -1,12 +1,12 @@
 /**
   ******************************************************************************
   * @file    custom_mems_conf.h
-  * @author  MEMS Application Team
+  * @author  MEMS Software Solutions Team
   * @brief   This file contains definitions of the MEMS components bus interfaces for custom boards
   ******************************************************************************
   * @attention
   *
-  * Copyright (c) 2022 STMicroelectronics.
+  * Copyright (c) 2023 STMicroelectronics.
   * All rights reserved.
   *
   * This software is licensed under terms that can be found in the LICENSE file
@@ -17,8 +17,8 @@
   */
 
 /* Define to prevent recursive inclusion -------------------------------------*/
-#ifndef __CUSTOM_MEMS_CONF_H__
-#define __CUSTOM_MEMS_CONF_H__
+#ifndef CUSTOM_MEMS_CONF_H
+#define CUSTOM_MEMS_CONF_H
 
 #ifdef __cplusplus
 extern "C" {
@@ -44,5 +44,4 @@ extern "C" {
 }
 #endif
 
-#endif /* __CUSTOM_MEMS_CONF_H__*/
-
+#endif /* CUSTOM_MEMS_CONF_H*/

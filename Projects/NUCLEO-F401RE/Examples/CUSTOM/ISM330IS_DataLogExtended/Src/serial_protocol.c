@@ -6,7 +6,7 @@
   ******************************************************************************
   * @attention
   *
-  * Copyright (c) 2022 STMicroelectronics.
+  * Copyright (c) 2023 STMicroelectronics.
   * All rights reserved.
   *
   * This software is licensed under terms that can be found in the LICENSE file
@@ -91,32 +91,27 @@ int32_t ByteStuffCopy(uint8_t *Dest, TMsg_t *Source)
   */
 int32_t ReverseByteStuffCopyByte(uint8_t *Source, uint8_t *Dest)
 {
-  int32_t ret;
-
   if (Source[0] == (uint8_t)TMSG_BS)
   {
     if (Source[1] == (uint8_t)TMSG_BS)
     {
       *Dest = TMSG_BS;
-      ret = 2;
+      return 2;
     }
-    else if (Source[1] == (uint8_t)TMSG_BS_EOF)
+
+    if (Source[1] == (uint8_t)TMSG_BS_EOF)
     {
       *Dest = TMSG_EOF;
-      ret = 2;
+      return 2;
     }
-    else
-    {
-      ret = 0; /* Invalid sequence */
-    }
+
+    return 0; // invalide sequence
   }
   else
   {
     *Dest = Source[0];
-    ret = 1;
+    return 1;
   }
-
-  return ret;
 }
 
 /**
@@ -128,32 +123,27 @@ int32_t ReverseByteStuffCopyByte(uint8_t *Source, uint8_t *Dest)
   */
 int32_t ReverseByteStuffCopyByte2(uint8_t Source0, uint8_t Source1, uint8_t *Dest)
 {
-  int32_t ret;
-
   if (Source0 == (uint8_t)TMSG_BS)
   {
     if (Source1 == (uint8_t)TMSG_BS)
     {
       *Dest = TMSG_BS;
-      ret = 2;
+      return 2;
     }
-    else if (Source1 == (uint8_t)TMSG_BS_EOF)
+
+    if (Source1 == (uint8_t)TMSG_BS_EOF)
     {
       *Dest = TMSG_EOF;
-      ret = 2;
+      return 2;
     }
-    else
-    {
-      ret = 0; /* Invalid sequence */
-    }
+
+    return 0; // invalid sequence
   }
   else
   {
     *Dest = Source0;
-    ret = 1;
+    return 1;
   }
-
-  return ret;
 }
 
 /**
@@ -166,63 +156,54 @@ int32_t ReverseByteStuffCopy(TMsg_t *Dest, uint8_t *Source)
 {
   uint32_t count = 0;
   int32_t state = 0;
-  int32_t ret = 1;
-  uint8_t *source_local;
 
-  source_local = Source;
-
-  while ((*source_local) != (uint8_t)TMSG_EOF)
+  while ((*Source) != (uint8_t)TMSG_EOF)
   {
     if (state == 0)
     {
-      if ((*source_local) == (uint8_t)TMSG_BS)
+      if ((*Source) == (uint8_t)TMSG_BS)
       {
         state = 1;
       }
       else
       {
-        Dest->Data[count] = *source_local;
+        Dest->Data[count] = *Source;
         count++;
       }
     }
     else
     {
-      if ((*source_local) == (uint8_t)TMSG_BS)
+      if ((*Source) == (uint8_t)TMSG_BS)
       {
         Dest->Data[count] = TMSG_BS;
         count++;
       }
       else
       {
-        if ((*source_local) == (uint8_t)TMSG_BS_EOF)
+        if ((*Source) == (uint8_t)TMSG_BS_EOF)
         {
           Dest->Data[count] = TMSG_EOF;
           count++;
         }
         else
         {
-          ret = 0; /* Invalid sequence */
-          break;
+          return 0; // invalid sequence
         }
       }
 
       state = 0;
     }
 
-    source_local++;
+    Source++;
   }
 
   if (state != 0)
   {
-    ret = 0;
+    return 0;
   }
 
-  if (ret != 0)
-  {
-    Dest->Len = count;
-  }
-
-  return ret;
+  Dest->Len = count;
+  return 1;
 }
 
 /**
@@ -253,7 +234,6 @@ int32_t CHK_CheckAndRemove(TMsg_t *Msg)
 {
   uint8_t chk = 0;
   uint32_t i;
-  int32_t ret;
 
   for (i = 0; i < Msg->Len; i++)
   {
@@ -261,17 +241,7 @@ int32_t CHK_CheckAndRemove(TMsg_t *Msg)
   }
 
   Msg->Len--;
-
-  if (chk == 0U)
-  {
-    ret = 1;
-  }
-  else
-  {
-    ret = 0;
-  }
-
-  return ret;
+  return (int32_t)(chk == 0U);
 }
 
 /**
@@ -284,12 +254,11 @@ int32_t CHK_CheckAndRemove(TMsg_t *Msg)
 void Serialize(uint8_t *Dest, uint32_t Source, uint32_t Len)
 {
   uint32_t i;
-  uint32_t source_local = Source;
 
   for (i = 0; i < Len; i++)
   {
-    Dest[i] = (uint8_t)source_local & 0xFFU;
-    source_local >>= 8;
+    Dest[i] = (uint8_t)Source & 0xFFU;
+    Source >>= 8;
   }
 }
 
@@ -302,15 +271,12 @@ void Serialize(uint8_t *Dest, uint32_t Source, uint32_t Len)
 uint32_t Deserialize(uint8_t *Source, uint32_t Len)
 {
   uint32_t app;
-  uint32_t len_local = Len;
 
-  len_local--;
-  app = Source[len_local];
-  while (len_local > 0U)
+  app = Source[--Len];
+  while (Len > 0U)
   {
     app <<= 8;
-    len_local--;
-    app += Source[len_local];
+    app += Source[--Len];
   }
 
   return app;
@@ -328,12 +294,12 @@ void Serialize_s32(uint8_t *Dest, int32_t Source, uint32_t Len)
   uint32_t i;
   uint32_t source_uint32;
 
-  source_uint32 = (uint32_t)Source;
-
   for (i = 0; i < Len; i++)
   {
+    source_uint32 = (uint32_t)Source;
     Dest[i] = (uint8_t)(source_uint32 & 0xFFU);
     source_uint32 >>= 8;
+    Source = (int32_t)source_uint32;
   }
 }
 
@@ -346,15 +312,12 @@ void Serialize_s32(uint8_t *Dest, int32_t Source, uint32_t Len)
 int32_t Deserialize_s32(uint8_t *Source, uint32_t Len)
 {
   uint32_t app;
-  uint32_t len_local = Len;
 
-  len_local--;
-  app = (uint32_t)Source[len_local];
-  while (len_local > 0U)
+  app = (uint32_t)Source[--Len];
+  while (Len > 0U)
   {
     app <<= 8;
-    len_local--;
-    app += (uint32_t)Source[len_local];
+    app += (uint32_t)Source[--Len];
   }
 
   return (int32_t)app;

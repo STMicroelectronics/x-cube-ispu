@@ -34,7 +34,7 @@ After connection has been established:
 
   - This example runs on STM32 Nucleo board with ISPU sensor.
   - This example has been tested with STMicroelectronics NUCLEO-F401RE RevC and
-    NUCLEO-L476RG RevC boards with ISM330IS and LSM6DSO16IS devices and can
+    NUCLEO-U575ZI-Q RevC boards with ISM330IS and LSM6DSO16IS devices and can
     be easily tailored to any other supported device and development board.
 
 

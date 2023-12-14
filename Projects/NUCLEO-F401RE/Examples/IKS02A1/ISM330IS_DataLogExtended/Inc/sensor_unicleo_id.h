@@ -6,7 +6,7 @@
   ******************************************************************************
   * @attention
   *
-  * Copyright (c) 2022 STMicroelectronics.
+  * Copyright (c) 2023 STMicroelectronics.
   * All rights reserved.
   *
   * This software is licensed under terms that can be found in the LICENSE file
@@ -57,9 +57,15 @@ extern "C" {
 #define LIS2DTW12_UNICLEO_ID_ACC    28
 #define ISM330IS_UNICLEO_ID         29
 #define LIS2DU12_UNICLEO_ID         30
-#define RESERVED_UNICLEO_ID         31
+#define LSM6DSV16X_UNICLEO_ID       31
 #define LSM6DSO16IS_UNICLEO_ID      32
 #define ASM330LHHX_UNICLEO_ID       33
+#define LSM6DSV16BX_UNICLEO_ID      34
+#define LSM6DSV_UNICLEO_ID          35
+#define LSM6DSV16B_UNICLEO_ID       36
+#define LIS2DUX12_UNICLEO_ID        37
+#define LIS2DUXS12_UNICLEO_ID       38
+#define LSM6DSV32X_UNICLEO_ID       39
 
 #define LIS3MDL_UNICLEO_ID          1
 #define LSM303AGR_UNICLEO_ID_MAG    2
@@ -84,6 +90,9 @@ extern "C" {
 #define STTS751_UNICLEO_ID          2
 #define STTS22H_UNICLEO_ID          3
 #define LIS2DTW12_UNICLEO_ID_TEMP   4
+#define SHT40AD1B_UNICLEO_ID        5
+#define STHS34PF80_UNICLEO_ID       6
+#define SGP40_UNICLEO_ID            7
 
 #ifdef __cplusplus
 }

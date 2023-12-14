@@ -48,6 +48,7 @@ extern "C"
 typedef int32_t (*LSM6DSO16IS_Init_Func)(void);
 typedef int32_t (*LSM6DSO16IS_DeInit_Func)(void);
 typedef int32_t (*LSM6DSO16IS_GetTick_Func)(void);
+typedef void    (*LSM6DSO16IS_Delay_Func)(uint32_t);
 typedef int32_t (*LSM6DSO16IS_WriteReg_Func)(uint16_t, uint16_t, uint8_t *, uint16_t);
 typedef int32_t (*LSM6DSO16IS_ReadReg_Func)(uint16_t, uint16_t, uint8_t *, uint16_t);
 
@@ -66,6 +67,7 @@ typedef struct
   LSM6DSO16IS_WriteReg_Func  WriteReg;
   LSM6DSO16IS_ReadReg_Func   ReadReg;
   LSM6DSO16IS_GetTick_Func   GetTick;
+  LSM6DSO16IS_Delay_Func     Delay;
 } LSM6DSO16IS_IO_t;
 
 
@@ -289,6 +291,8 @@ int32_t LSM6DSO16IS_FIFO_ACC_Set_Decimation(LSM6DSO16IS_Object_t *pObj, uint8_t 
 int32_t LSM6DSO16IS_FIFO_ACC_Get_Axis(LSM6DSO16IS_Object_t *pObj, int32_t *Acceleration);
 int32_t LSM6DSO16IS_FIFO_GYRO_Set_Decimation(LSM6DSO16IS_Object_t *pObj, uint8_t Decimation);
 int32_t LSM6DSO16IS_FIFO_GYRO_Get_Axis(LSM6DSO16IS_Object_t *pObj, int32_t *AngularVelocity);
+
+int32_t LSM6DSO16IS_Set_Mem_Bank(LSM6DSO16IS_Object_t *pObj, uint8_t Val);
 
 /**
   * @}

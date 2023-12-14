@@ -11,8 +11,10 @@ span.smallcaps{font-variant: small-caps;}
 div.columns{display: flex; gap: min(4vw, 1.5em);}
 div.column{flex: auto; overflow-x: auto;}
 div.hanging-indent{margin-left: 1.5em; text-indent: -1.5em;}
-ul.task-list{list-style: none;}
+
+ul.task-list[class]{list-style: none;}
 ul.task-list li input[type="checkbox"] {
+font-size: inherit;
 width: 0.8em;
 margin: 0 0.8em 0.2em -1.6em;
 vertical-align: middle;
@@ -62,9 +64,9 @@ environment</strong></h3>
 <ul>
 <li>This example runs on STM32 Nucleo board with ISPU sensor.</li>
 <li>This example has been tested with STMicroelectronics NUCLEO-F401RE
-RevC and NUCLEO-L476RG RevC boards with ISM330IS and LSM6DSO16IS devices
-and can be easily tailored to any other supported device and development
-board.</li>
+RevC and NUCLEO-U575ZI-Q RevC boards with ISM330IS and LSM6DSO16IS
+devices and can be easily tailored to any other supported device and
+development board.</li>
 </ul>
 <h3 id="how-to-use-it"><strong>How to use it?</strong></h3>
 <p>In order to make the program work, you must do the following:</p>

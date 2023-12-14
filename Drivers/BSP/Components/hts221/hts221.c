@@ -109,6 +109,7 @@ int32_t HTS221_RegisterBusIO(HTS221_Object_t *pObj, HTS221_IO_t *pIO)
 
     pObj->Ctx.read_reg  = ReadRegWrap;
     pObj->Ctx.write_reg = WriteRegWrap;
+    pObj->Ctx.mdelay    = pIO->Delay;
     pObj->Ctx.handle   = pObj;
 
     if (pObj->IO.Init != NULL)
@@ -199,10 +200,12 @@ int32_t HTS221_GetCapabilities(HTS221_Object_t *pObj, HTS221_Capabilities_t *Cap
   Capabilities->Humidity    = 1;
   Capabilities->Pressure    = 0;
   Capabilities->Temperature = 1;
+  Capabilities->Gas         = 0;
   Capabilities->LowPower    = 0;
   Capabilities->HumMaxOdr   = 12.5f;
   Capabilities->TempMaxOdr  = 12.5f;
   Capabilities->PressMaxOdr = 0.0f;
+  Capabilities->GasMaxOdr   = 0.0f;
   return HTS221_OK;
 }
 

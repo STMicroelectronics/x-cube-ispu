@@ -356,9 +356,9 @@
           <state>$PROJ_DIR$/../../../../../../Drivers/STM32F4xx_HAL_Driver/Inc/Legacy</state>
           <state>$PROJ_DIR$/../../../../../../Drivers/CMSIS/Device/ST/STM32F4xx/Include</state>
           <state>$PROJ_DIR$/../../../../../../Drivers/CMSIS/Include</state>
-          <state>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/lsm6dso16is</state>
-          <state>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/Common</state>
           <state>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/iis2mdc</state>
+          <state>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/Common</state>
+          <state>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/lsm6dso16is</state>
         </option>
         <option>
           <name>CCStdIncCheck</name>
@@ -1140,16 +1140,16 @@
       <group>
         <name>Components</name>
         <file>
-          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/lsm6dso16is/lsm6dso16is_reg.c</name>
-        </file>
-        <file>
-          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/lsm6dso16is/lsm6dso16is.c</name>
-        </file>
-        <file>
           <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/iis2mdc/iis2mdc_reg.c</name>
         </file>
         <file>
           <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/iis2mdc/iis2mdc.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/lsm6dso16is/lsm6dso16is_reg.c</name>
+        </file>
+        <file>
+          <name>$PROJ_DIR$/../../../../../../Drivers/BSP/Components/lsm6dso16is/lsm6dso16is.c</name>
         </file>
       </group>
     </group>

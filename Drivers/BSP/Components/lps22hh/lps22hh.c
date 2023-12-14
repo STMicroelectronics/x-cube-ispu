@@ -109,6 +109,7 @@ int32_t LPS22HH_RegisterBusIO(LPS22HH_Object_t *pObj, LPS22HH_IO_t *pIO)
 
     pObj->Ctx.read_reg  = ReadRegWrap;
     pObj->Ctx.write_reg = WriteRegWrap;
+    pObj->Ctx.mdelay    = pIO->Delay;
     pObj->Ctx.handle   = pObj;
 
     if (pObj->IO.Init == NULL)
@@ -216,10 +217,12 @@ int32_t LPS22HH_GetCapabilities(LPS22HH_Object_t *pObj, LPS22HH_Capabilities_t *
   Capabilities->Humidity    = 0;
   Capabilities->Pressure    = 1;
   Capabilities->Temperature = 1;
+  Capabilities->Gas         = 0;
   Capabilities->LowPower    = 0;
   Capabilities->HumMaxOdr   = 0.0f;
   Capabilities->TempMaxOdr  = 200.0f;
   Capabilities->PressMaxOdr = 200.0f;
+  Capabilities->GasMaxOdr   = 0.0f;
   return LPS22HH_OK;
 }
 
@@ -496,8 +499,8 @@ int32_t LPS22HH_TEMP_Get_DRDY_Status(LPS22HH_Object_t *pObj, uint8_t *Status)
 /**
   * @brief  Get the LPS22HH register value
   * @param  pObj the device pObj
-  * @param  Reg address to be written
-  * @param  Data value to be written
+  * @param  Reg address to be read
+  * @param  Data value to be read
   * @retval 0 in case of success, an error code otherwise
   */
 int32_t LPS22HH_Read_Reg(LPS22HH_Object_t *pObj, uint8_t Reg, uint8_t *Data)
@@ -536,27 +539,6 @@ int32_t LPS22HH_Write_Reg(LPS22HH_Object_t *pObj, uint8_t Reg, uint8_t Data)
   */
 
 /**
-  * @brief  Get the LPS22HH FIFO get temp data
-  * @param  pObj the device pObj
-  * @param  Status the status of data ready bit
-  * @retval 0 in case of success, an error code otherwise
-  */
-int32_t LPS22HH_Get_Temp(LPS22HH_Object_t *pObj, float *Data)
-{
-  lps22hh_axis1bit16_t data_raw_temperature;
-
-  (void)memset(data_raw_temperature.u8bit, 0x00, sizeof(int16_t));
-  if (lps22hh_temperature_raw_get(&(pObj->Ctx), &data_raw_temperature.i16bit) != LPS22HH_OK)
-  {
-    return LPS22HH_ERROR;
-  }
-
-  *Data = ((float)data_raw_temperature.i16bit) / 100.0f;
-
-  return LPS22HH_OK;
-}
-
-/**
   * @brief  Get output data rate
   * @param  pObj the device pObj
   * @param  Odr the output data rate value
@@ -575,26 +557,32 @@ static int32_t LPS22HH_GetOutputDataRate(LPS22HH_Object_t *pObj, float *Odr)
   switch (odr_low_level)
   {
     case LPS22HH_POWER_DOWN:
+    case LPS22HH_ONE_SHOOT:
       *Odr = 0.0f;
       break;
 
     case LPS22HH_1_Hz:
+    case LPS22HH_1_Hz_LOW_NOISE:
       *Odr = 1.0f;
       break;
 
     case LPS22HH_10_Hz:
+    case LPS22HH_10_Hz_LOW_NOISE:
       *Odr = 10.0f;
       break;
 
     case LPS22HH_25_Hz:
+    case LPS22HH_25_Hz_LOW_NOISE:
       *Odr = 25.0f;
       break;
 
     case LPS22HH_50_Hz:
+    case LPS22HH_50_Hz_LOW_NOISE:
       *Odr = 50.0f;
       break;
 
     case LPS22HH_75_Hz:
+    case LPS22HH_75_Hz_LOW_NOISE:
       *Odr = 75.0f;
       break;
 
@@ -671,10 +659,13 @@ static int32_t LPS22HH_SetOutputDataRate_When_Disabled(LPS22HH_Object_t *pObj, f
   */
 static int32_t LPS22HH_Initialize(LPS22HH_Object_t *pObj)
 {
-  /* Disable MIPI I3C(SM) interface */
-  if (lps22hh_i3c_interface_set(&(pObj->Ctx), LPS22HH_I3C_DISABLE) != LPS22HH_OK)
+  if(pObj->IO.BusType != LPS22HH_I3C_BUS)
   {
-    return LPS22HH_ERROR;
+    /* Disable MIPI I3C(SM) interface */
+    if (lps22hh_i3c_interface_set(&(pObj->Ctx), LPS22HH_I3C_DISABLE) != LPS22HH_OK)
+    {
+      return LPS22HH_ERROR;
+    }
   }
 
   /* Power down the device, set Low Noise Enable (bit 5), clear One Shot (bit 4) */
@@ -709,7 +700,8 @@ static int32_t LPS22HH_Initialize(LPS22HH_Object_t *pObj)
 /**
   * @brief  Get the LPS22HH FIFO data level
   * @param  pObj the device pObj
-  * @param  Status the status of data ready bit
+  * @param  Press the pressure data
+  * @param  Temp the temperature data
   * @retval 0 in case of success, an error code otherwise
   */
 int32_t LPS22HH_FIFO_Get_Data(LPS22HH_Object_t *pObj, float *Press, float *Temp)
@@ -903,7 +895,7 @@ int32_t LPS22HH_FIFO_Set_Mode(LPS22HH_Object_t *pObj, uint8_t Mode)
 /**
   * @brief  Set the LPS22HH FIFO data level
   * @param  pObj the device pObj
-  * @param  Status the status of data ready bit
+  * @param  Watermark the watermark level
   * @retval 0 in case of success, an error code otherwise
   */
 int32_t LPS22HH_FIFO_Set_Watermark_Level(LPS22HH_Object_t *pObj, uint8_t Watermark)

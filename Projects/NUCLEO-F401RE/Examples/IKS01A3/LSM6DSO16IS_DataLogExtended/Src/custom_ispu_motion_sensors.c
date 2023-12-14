@@ -6,7 +6,7 @@
   ******************************************************************************
   * @attention
   *
-  * Copyright (c) 2022 STMicroelectronics.
+  * Copyright (c) 2023 STMicroelectronics.
   * All rights reserved.
   *
   * This software is licensed under terms that can be found in the LICENSE file
@@ -577,6 +577,10 @@ static int32_t LSM6DSO16IS_0_Probe(uint32_t Functions)
   io_ctx.GetTick     = BSP_GetTick;
 
   if (LSM6DSO16IS_RegisterBusIO(&lsm6dso16is_obj_0, &io_ctx) != LSM6DSO16IS_OK)
+  {
+    ret = BSP_ERROR_UNKNOWN_COMPONENT;
+  }
+  else if (LSM6DSO16IS_Set_Mem_Bank(&lsm6dso16is_obj_0, LSM6DSO16IS_MAIN_MEM_BANK) != LSM6DSO16IS_OK)
   {
     ret = BSP_ERROR_UNKNOWN_COMPONENT;
   }

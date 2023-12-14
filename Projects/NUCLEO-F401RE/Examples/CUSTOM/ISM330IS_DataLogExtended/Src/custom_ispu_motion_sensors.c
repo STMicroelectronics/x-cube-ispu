@@ -6,7 +6,7 @@
   ******************************************************************************
   * @attention
   *
-  * Copyright (c) 2022 STMicroelectronics.
+  * Copyright (c) 2023 STMicroelectronics.
   * All rights reserved.
   *
   * This software is licensed under terms that can be found in the LICENSE file
@@ -576,6 +576,10 @@ static int32_t ISM330IS_0_Probe(uint32_t Functions)
   io_ctx.GetTick     = BSP_GetTick;
 
   if (ISM330IS_RegisterBusIO(&ism330is_obj_0, &io_ctx) != ISM330IS_OK)
+  {
+    ret = BSP_ERROR_UNKNOWN_COMPONENT;
+  }
+  else if (ISM330IS_Set_Mem_Bank(&ism330is_obj_0, ISM330IS_MAIN_MEM_BANK) != ISM330IS_OK)
   {
     ret = BSP_ERROR_UNKNOWN_COMPONENT;
   }

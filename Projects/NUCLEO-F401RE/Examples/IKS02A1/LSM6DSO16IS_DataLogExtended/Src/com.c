@@ -6,7 +6,7 @@
   ******************************************************************************
   * @attention
   *
-  * Copyright (c) 2022 STMicroelectronics.
+  * Copyright (c) 2023 STMicroelectronics.
   * All rights reserved.
   *
   * This software is licensed under terms that can be found in the LICENSE file
@@ -30,7 +30,7 @@
 
 /* Private macro -------------------------------------------------------------*/
 /* Exported variables --------------------------------------------------------*/
-__IO uint8_t UartRxBuffer[UART_RX_BUFFER_SIZE];
+volatile uint8_t UartRxBuffer[UART_RX_BUFFER_SIZE];
 TUart_Engine_t UartEngine;
 
 /* Private variables ---------------------------------------------------------*/
@@ -55,7 +55,6 @@ int32_t UART_ReceivedMSG(TMsg_t *Msg)
   uint8_t data;
   uint16_t source = 0;
   uint8_t inc;
-  int32_t ret = 1;
 
   if (Get_DMA_Flag_Status(hcom_uart[COM1].hdmarx) == (uint32_t)RESET)
   {
@@ -97,63 +96,41 @@ int32_t UART_ReceivedMSG(TMsg_t *Msg)
           if (source >= TMSG_MAX_LEN)
           {
             UartEngine.StartOfMsg = j;
-            ret = 0;
-          }
-          else
-          {
-            Source0 = UartRxBuffer[j];
-            Source1 = UartRxBuffer[j2];
-            Dest    = &Msg->Data[source];
-
-            inc = (uint8_t)ReverseByteStuffCopyByte2(Source0, Source1, Dest);
-
-            if (inc == 0U)
-            {
-              UartEngine.StartOfMsg = j2;
-              ret = 0;
-            }
+            return 0;
           }
 
-          if (ret == 0)
+          Source0 = UartRxBuffer[j];
+          Source1 = UartRxBuffer[j2];
+          Dest    = &Msg->Data[source];
+
+          inc = (uint8_t)ReverseByteStuffCopyByte2(Source0, Source1, Dest);
+
+          if (inc == 0U)
           {
-            break;
+            UartEngine.StartOfMsg = j2;
+            return 0;
           }
-          else
-          {
-            j = (j + inc) % (uint16_t)UART_RX_BUFFER_SIZE;
-            source++;
-          }
+
+          j = (j + inc) % (uint16_t)UART_RX_BUFFER_SIZE;
+          source++;
         }
 
-        if (ret == 1)
-        {
-          Msg->Len = source;
-          j = (j + 1U) % (uint16_t)UART_RX_BUFFER_SIZE; /* skip TMSG_EOF */
-          UartEngine.StartOfMsg = j;
+        Msg->Len = source;
+        j = (j + 1U) % (uint16_t)UART_RX_BUFFER_SIZE; /* skip TMsg_EOF */
+        UartEngine.StartOfMsg = j;
 
-          if (CHK_CheckAndRemove(Msg) != 0) /* check message integrity */
-          {
-            ret = 1;
-          }
-          else
-          {
-            ret = 0;
-          }
-          break;
-        }
+        /* check message integrity */
+        return (CHK_CheckAndRemove(Msg) != 0) ? 1 : 0;
       }
     }
 
-    if (ret == 1)
+    if (length > (uint16_t)UART_MSG_MAX_SIZE)
     {
-      if (length > (uint16_t)UART_MSG_MAX_SIZE)
-      {
-        UartEngine.StartOfMsg = dma_counter;
-      }
+      UartEngine.StartOfMsg = dma_counter;
     }
   }
 
-  return ret;
+  return 0;
 }
 
 /**
@@ -163,7 +140,7 @@ int32_t UART_ReceivedMSG(TMsg_t *Msg)
   */
 void UART_SendMsg(TMsg_t *Msg)
 {
-  __IO uint8_t UartTxBuffer[UART_TX_BUFFER_SIZE];
+  volatile uint8_t UartTxBuffer[UART_TX_BUFFER_SIZE];
   uint16_t count_out;
 
   CHK_ComputeAndAdd(Msg);
