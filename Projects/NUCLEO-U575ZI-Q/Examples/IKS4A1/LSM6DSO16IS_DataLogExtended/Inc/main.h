@@ -7,7 +7,7 @@
   ******************************************************************************
   * @attention
   *
-  * Copyright (c) 2023 STMicroelectronics.
+  * Copyright (c) 2024 STMicroelectronics.
   * All rights reserved.
   *
   * This software is licensed under terms that can be found in the LICENSE file
@@ -60,14 +60,11 @@ void MX_TIM3_Init(void);
 /* USER CODE END EFP */
 
 /* Private defines -----------------------------------------------------------*/
-#define USER_BUTTON_Pin GPIO_PIN_13
-#define USER_BUTTON_GPIO_Port GPIOC
-#define USER_BUTTON_EXTI_IRQn EXTI13_IRQn
 #define VBUS_SENSE_Pin GPIO_PIN_2
 #define VBUS_SENSE_GPIO_Port GPIOC
-#define USER_INT_Pin GPIO_PIN_15
-#define USER_INT_GPIO_Port GPIOF
-#define USER_INT_EXTI_IRQn EXTI15_IRQn
+#define LSM6DSO16IS_INT2_Pin GPIO_PIN_13
+#define LSM6DSO16IS_INT2_GPIO_Port GPIOF
+#define LSM6DSO16IS_INT2_EXTI_IRQn EXTI13_IRQn
 #define UCPD_FLT_Pin GPIO_PIN_14
 #define UCPD_FLT_GPIO_Port GPIOB
 #define UCPD1_CC2_Pin GPIO_PIN_15

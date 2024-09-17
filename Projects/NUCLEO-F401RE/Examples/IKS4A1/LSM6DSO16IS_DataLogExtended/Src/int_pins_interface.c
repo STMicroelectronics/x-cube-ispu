@@ -6,7 +6,7 @@
   ******************************************************************************
   * @attention
   *
-  * Copyright (c) 2023 STMicroelectronics.
+  * Copyright (c) 2024 STMicroelectronics.
   * All rights reserved.
   *
   * This software is licensed under terms that can be found in the LICENSE file
@@ -22,7 +22,7 @@
 
 /* Exported variables --------------------------------------------------------*/
 uint32_t IspuElapsedTimeUs = 0U;
-EXTI_HandleTypeDef hexti10 = {.Line = EXTI_LINE_10};
+EXTI_HandleTypeDef hexti8 = {.Line = EXTI_LINE_8};
 
 /* Private function prototypes -----------------------------------------------*/
 static void Int2_Pin_Isr(void);
@@ -36,10 +36,10 @@ static void Int2_Pin_Isr(void);
 void Set_Int_Pins_Exti(void)
 {
   /* Register event IRQ handler */
-  (void)HAL_EXTI_GetHandle(&hexti10, EXTI_LINE_10);
-  (void)HAL_EXTI_RegisterCallback(&hexti10, HAL_EXTI_COMMON_CB_ID, Int2_Pin_Isr);
-  HAL_NVIC_SetPriority(EXTI15_10_IRQn, 0, 0);
-  HAL_NVIC_EnableIRQ(EXTI15_10_IRQn);
+  (void)HAL_EXTI_GetHandle(&hexti8, EXTI_LINE_8);
+  (void)HAL_EXTI_RegisterCallback(&hexti8, HAL_EXTI_COMMON_CB_ID, Int2_Pin_Isr);
+  HAL_NVIC_SetPriority(EXTI9_5_IRQn, 0, 0);
+  HAL_NVIC_EnableIRQ(EXTI9_5_IRQn);
 }
 
 /* Private functions ---------------------------------------------------------*/
@@ -55,7 +55,7 @@ static void Int2_Pin_Isr(void)
   static uint32_t reset_state_tick_us = 0U;
   static uint32_t set_state_tick_us = 0U;
 
-  pin_state = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_10);
+  pin_state = HAL_GPIO_ReadPin(GPIOA, GPIO_PIN_8);
 
   if (pin_state == GPIO_PIN_RESET)
   {

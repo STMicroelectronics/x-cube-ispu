@@ -6,7 +6,7 @@
   ******************************************************************************
   * @attention
   *
-  * Copyright (c) 2023 STMicroelectronics.
+  * Copyright (c) 2024 STMicroelectronics.
   * All rights reserved.
   *
   * This software is licensed under terms that can be found in the LICENSE file
@@ -30,9 +30,9 @@ extern "C" {
 
 /* Exported variables --------------------------------------------------------*/
 extern uint32_t IspuElapsedTimeUs;
-extern EXTI_HandleTypeDef hexti15;
+extern EXTI_HandleTypeDef hexti13;
 
-#define H_EXTI_15 hexti15
+#define H_EXTI_13 hexti13
 
 /* Exported Functions --------------------------------------------------------*/
 void Set_Int_Pins_Exti(void);

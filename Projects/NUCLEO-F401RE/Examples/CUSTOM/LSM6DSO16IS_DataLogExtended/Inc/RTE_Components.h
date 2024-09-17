@@ -7,7 +7,7 @@
   ******************************************************************************
   * @attention
   *
-  * Copyright (c) 2023 STMicroelectronics.
+  * Copyright (c) 2024 STMicroelectronics.
   * All rights reserved.
   *
   * This software is licensed under terms that can be found in the LICENSE file
@@ -22,7 +22,7 @@
 #define  __RTE_COMPONENTS_H__
 
 /* Defines ------------------------------------------------------------------*/
-/* STMicroelectronics.X-CUBE-ISPU.2.0.0 */
+/* STMicroelectronics.X-CUBE-ISPU.2.1.0 */
 #define LSM6DSO16IS_ACCGYR_I2C
 #define ISPU_DATALOGEXTENDED
 #define BSP_ISPU_MOTION_SENSORS

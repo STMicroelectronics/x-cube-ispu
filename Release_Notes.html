@@ -34,7 +34,7 @@
 <center>
 <h1 id="release-notes-for-x-cube-ispu">Release Notes for
 <mark>X-CUBE-ISPU</mark></h1>
-<p>Copyright © 2023 STMicroelectronics<br />
+<p>Copyright © 2024 STMicroelectronics<br />
 </p>
 <a href="https://www.st.com" class="logo"><img
 src="_htmresc/st_logo_2020.png" alt="ST logo" /></a>
@@ -98,20 +98,288 @@ boards</a></li>
 <section id="update-history" class="col-sm-12 col-lg-8">
 <h1>Update History</h1>
 <div class="collapse">
-<input type="checkbox" id="collapse-section3" checked aria-hidden="true">
-<label for="collapse-section3" aria-hidden="true">V2.0.0 /
-30-November-2023</label>
+<input type="checkbox" id="collapse-section4" checked aria-hidden="true">
+<label for="collapse-section4" aria-hidden="true">V2.1.0 /
+30-September-2024</label>
 <div>
 <h2 id="main-changes">Main Changes</h2>
 <h3 id="maintenance-release">Maintenance release</h3>
+<ul>
+<li>Regenerate the source code with CubeMX v6.12.0 and ISPU pack
+v2.1.0</li>
+<li>Maintanance</li>
+<li>Update drivers</li>
+<li>Update algorithms in Ispu folder</li>
+<li>NOTE: Please see known limitations below</li>
+</ul>
+<h2 id="contents">Contents</h2>
+<p><small>The components flagged by “<span
+class="icon-st-update"></span>” have changed since the previous release.
+“<span class="icon-st-add"></span>” are new.</small></p>
+<p>The X-CUBE-ISPU expansion software package comes with a rich set of
+examples running on STMicroelectronics boards, organized by board and
+provided with preconfigured projects for the main supported
+toolchains.</p>
+<p>Documentation</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: left;">Document</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">X-CUBE-ISPU API Description</td>
+<td style="text-align: left;">V2.1.0 <span
+class="icon-st-update"></span></td>
+<td style="text-align: left;"><a
+href="Documentation\X-CUBE-ISPU.chm">CHM</a></td>
+</tr>
+</tbody>
+</table>
+<p>Drivers</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: left;">Release note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">STM32F4xx CMSIS</td>
+<td style="text-align: left;">V2.6.9 <span
+class="icon-st-update"></span></td>
+<td style="text-align: left;"><a
+href="Drivers\CMSIS\Device\ST\STM32F4xx\Release_Notes.html">release
+notes</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32F4xx HAL</td>
+<td style="text-align: left;">V1.8.2 <span
+class="icon-st-update"></span></td>
+<td style="text-align: left;"><a
+href="Drivers\STM32F4xx_HAL_Driver\Release_Notes.html">release
+notes</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">BSP STM32F4xx_Nucleo</td>
+<td style="text-align: left;">V1.2.9 <span
+class="icon-st-update"></span></td>
+<td style="text-align: left;"><a
+href="Drivers\BSP\STM32F4xx-Nucleo\Release_Notes.html">release
+notes</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">STM32U5xx CMSIS</td>
+<td style="text-align: left;">V1.3.1 <span
+class="icon-st-update"></span></td>
+<td style="text-align: left;"><a
+href="Drivers\CMSIS\Device\ST\STM32U5xx\Release_Notes.html">release
+notes</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">STM32U5xx HAL</td>
+<td style="text-align: left;">V1.4.0 <span
+class="icon-st-update"></span></td>
+<td style="text-align: left;"><a
+href="Drivers\STM32U5xx_HAL_Driver\Release_Notes.html">release
+notes</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">BSP STM32U5xx_Nucleo</td>
+<td style="text-align: left;">V1.2.1 <span
+class="icon-st-update"></span></td>
+<td style="text-align: left;"><a
+href="Drivers\BSP\STM32U5xx_Nucleo\Release_Notes.html">release
+notes</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">BSP Common</td>
+<td style="text-align: left;">V7.2.1</td>
+<td style="text-align: left;"><a
+href="Drivers\BSP\Components\Common\Release_Notes.html">release
+notes</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">BSP Component HTS221</td>
+<td style="text-align: left;">V5.7.0 <span
+class="icon-st-update"></span></td>
+<td style="text-align: left;"><a
+href="Drivers\BSP\Components\hts221\Release_Notes.html">release
+notes</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">BSP Component IIS2MDC</td>
+<td style="text-align: left;">V1.4.0 <span
+class="icon-st-update"></span></td>
+<td style="text-align: left;"><a
+href="Drivers\BSP\Components\iis2mdc\Release_Notes.html">release
+notes</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">BSP Component ISM330IS</td>
+<td style="text-align: left;">V1.3.0 <span
+class="icon-st-update"></span></td>
+<td style="text-align: left;"><a
+href="Drivers\BSP\Components\ism330is\Release_Notes.html">release
+notes</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">BSP Component LIS2MDL</td>
+<td style="text-align: left;">V1.7.0 <span
+class="icon-st-update"></span></td>
+<td style="text-align: left;"><a
+href="Drivers\BSP\Components\lis2mdl\Release_Notes.html">release
+notes</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">BSP Component LPS22DF</td>
+<td style="text-align: left;">V1.4.0 <span
+class="icon-st-update"></span></td>
+<td style="text-align: left;"><a
+href="Drivers\BSP\Components\lps22df\Release_Notes.html">release
+notes</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">BSP Component LPS22HH</td>
+<td style="text-align: left;">V1.7.0 <span
+class="icon-st-update"></span></td>
+<td style="text-align: left;"><a
+href="Drivers\BSP\Components\lps22hh\Release_Notes.html">release
+notes</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">BSP Component LSM6DSO16IS</td>
+<td style="text-align: left;">V1.4.0 <span
+class="icon-st-update"></span></td>
+<td style="text-align: left;"><a
+href="Drivers\BSP\Components\lsm6dso16is\Release_Notes.html">release
+notes</a></td>
+</tr>
+<tr class="odd">
+<td style="text-align: left;">BSP Component SHT40AD1B</td>
+<td style="text-align: left;">V1.3.0</td>
+<td style="text-align: left;"><a
+href="Drivers\BSP\Components\sht40ad1b\Release_Notes.html">release
+notes</a></td>
+</tr>
+<tr class="even">
+<td style="text-align: left;">BSP Component STTS22H</td>
+<td style="text-align: left;">V1.7.0 <span
+class="icon-st-update"></span></td>
+<td style="text-align: left;"><a
+href="Drivers\BSP\Components\stts22h\Release_Notes.html">release
+notes</a></td>
+</tr>
+</tbody>
+</table>
+<p>Ispu</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: left;">Release note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Ispu</td>
+<td style="text-align: left;">V1.3.0 <span
+class="icon-st-update"></span></td>
+<td style="text-align: left;"><a href="Ispu\Release_Notes.html">release
+notes</a></td>
+</tr>
+</tbody>
+</table>
+<p>Projects</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: left;">Release note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">Projects</td>
+<td style="text-align: left;">V2.1.0 <span
+class="icon-st-update"></span></td>
+<td style="text-align: left;"><a
+href="Projects\Release_Notes.html">release notes</a></td>
+</tr>
+</tbody>
+</table>
+<p>Utilities</p>
+<table>
+<thead>
+<tr class="header">
+<th style="text-align: left;">Name</th>
+<th style="text-align: left;">Version</th>
+<th style="text-align: left;">Release note</th>
+</tr>
+</thead>
+<tbody>
+<tr class="odd">
+<td style="text-align: left;">MEMS-Studio</td>
+<td style="text-align: left;">V1.3.0 <span
+class="icon-st-add"></span></td>
+<td style="text-align: left;"><a
+href="Utilities\PC_software\MEMS-Studio.htm">release notes</a></td>
+</tr>
+</tbody>
+</table>
+<h2 id="known-limitations">Known Limitations</h2>
+<ul>
+<li>On dual-core STM32 series this expansion software can be used on
+both cores but exclusively</li>
+<li>The RTC must be configured to be used in the Non-secure core like
+all the MEMS components - put “Disable” in the “RTC full secure” CubeMX
+settings</li>
+</ul>
+<h2 id="development-toolchains-and-compilers">Development Toolchains and
+Compilers</h2>
+<ul>
+<li>IAR Embedded Workbench for ARM (EWARM) toolchain V9.20.1</li>
+<li>RealView Microcontroller Development Kit (MDK-ARM) toolchain
+V5.38.0</li>
+<li>STM32CubeIDE V1.15.1</li>
+</ul>
+<h2 id="supported-devices-and-boards">Supported Devices and Boards</h2>
+<ul>
+<li>STM32F401RE devices and NUCLEO-F401RE board RevC</li>
+<li>STM32U575ZI-Q devices and NUCLEO-U575ZI-Q board RevC</li>
+<li>X-NUCLEO-IKS01A3 Board</li>
+<li>X-NUCLEO-IKS02A1 Board</li>
+<li>X-NUCLEO-IKS4A1 Board</li>
+<li>ISM330IS</li>
+<li>LSM6DSO16IS</li>
+</ul>
+<h2 id="dependencies">Dependencies</h2>
+<p>None</p>
+</div>
+</div>
+<div class="collapse">
+<input type="checkbox" id="collapse-section3" aria-hidden="true">
+<label for="collapse-section3" aria-hidden="true">V2.0.0 /
+30-November-2023</label>
+<div>
+<h2 id="main-changes-1">Main Changes</h2>
+<h3 id="maintenance-release-1">Maintenance release</h3>
 <ul>
 <li>Regenerate the source code with CubeMX v6.10.0 and ISPU pack
 v2.0.0</li>
 <li>Replace support for NUCLEO-L476RG by NUCLEO-U575ZI-Q</li>
 <li>Add support for expansion board X-NUCLEO-IKS4A1</li>
 <li>Update algorithms in Ispu folder</li>
+<li>NOTE: Please see known limitations below</li>
 </ul>
-<h2 id="contents">Contents</h2>
+<h2 id="contents-1">Contents</h2>
 <p>The X-CUBE-ISPU expansion software package comes with a rich set of
 examples running on STMicroelectronics boards, organized by board and
 provided with preconfigured projects for the main supported
@@ -312,20 +580,24 @@ href="Utilities\PC_software\Unicleo-GUI.htm">release notes</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="known-limitations">Known Limitations</h2>
+<h2 id="known-limitations-1">Known Limitations</h2>
 <ul>
 <li>On dual-core STM32 series this expansion software can be used on
 both cores but exclusively</li>
+<li>The RTC must be configured to be used in the Non-secure core like
+all the MEMS components - put “Disable” in the “RTC full secure” CubeMX
+settings</li>
 </ul>
-<h2 id="development-toolchains-and-compilers">Development Toolchains and
-Compilers</h2>
+<h2 id="development-toolchains-and-compilers-1">Development Toolchains
+and Compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain V9.20.1</li>
 <li>RealView Microcontroller Development Kit (MDK-ARM) toolchain
 V5.37.0</li>
 <li>STM32CubeIDE V1.13.2</li>
 </ul>
-<h2 id="supported-devices-and-boards">Supported Devices and Boards</h2>
+<h2 id="supported-devices-and-boards-1">Supported Devices and
+Boards</h2>
 <ul>
 <li>STM32F401RE devices and NUCLEO-F401RE board RevC</li>
 <li>STM32U575ZI-Q devices and NUCLEO-U575ZI-Q board RevC</li>
@@ -335,7 +607,7 @@ V5.37.0</li>
 <li>ISM330IS</li>
 <li>LSM6DSO16IS</li>
 </ul>
-<h2 id="dependencies">Dependencies</h2>
+<h2 id="dependencies-1">Dependencies</h2>
 <p>None</p>
 </div>
 </div>
@@ -344,14 +616,14 @@ V5.37.0</li>
 <label for="collapse-section2" aria-hidden="true">V1.1.0 /
 31-October-2022</label>
 <div>
-<h2 id="main-changes-1">Main Changes</h2>
-<h3 id="maintenance-release-1">Maintenance release</h3>
+<h2 id="main-changes-2">Main Changes</h2>
+<h3 id="maintenance-release-2">Maintenance release</h3>
 <ul>
 <li>Regenerate the source code with CubeMX v6.6.1 and ISPU pack
 v1.1.0</li>
 <li>Add new examples: NEAI_AnomalyDetection</li>
 </ul>
-<h2 id="contents-1">Contents</h2>
+<h2 id="contents-2">Contents</h2>
 <p>The X-CUBE-ISPU expansion software package comes with a rich set of
 examples running on STMicroelectronics boards, organized by board and
 provided with preconfigured projects for the main supported
@@ -531,12 +803,12 @@ href="Utilities\PC_software\Unicleo-GUI.htm">release notes</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="known-limitations-1">Known Limitations</h2>
+<h2 id="known-limitations-2">Known Limitations</h2>
 <ul>
 <li>On dual-core STM32 series this expansion software can be used on
 both cores but exclusively</li>
 </ul>
-<h2 id="development-toolchains-and-compilers-1">Development Toolchains
+<h2 id="development-toolchains-and-compilers-2">Development Toolchains
 and Compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain V9.20.1</li>
@@ -544,13 +816,13 @@ and Compilers</h2>
 V5.37.0</li>
 <li>STM32CubeIDE V1.10.1</li>
 </ul>
-<h2 id="supported-devices-and-boards-1">Supported Devices and
+<h2 id="supported-devices-and-boards-2">Supported Devices and
 Boards</h2>
 <ul>
 <li>STM32F401RE devices and NUCLEO-F401RE board RevC</li>
 <li>STM32L476RG devices and NUCLEO-L476RG board RevC</li>
 </ul>
-<h2 id="dependencies-1">Dependencies</h2>
+<h2 id="dependencies-2">Dependencies</h2>
 <p>None</p>
 </div>
 </div>
@@ -559,7 +831,7 @@ Boards</h2>
 <label for="collapse-section1" aria-hidden="true">V1.0.0 /
 31-July-2022</label>
 <div>
-<h2 id="main-changes-2">Main Changes</h2>
+<h2 id="main-changes-3">Main Changes</h2>
 <h3 id="first-release">First release</h3>
 <ul>
 <li>First official release</li>
@@ -567,7 +839,7 @@ Boards</h2>
 v1.0.0</li>
 <li>Add new sensors: ISM330IS, LSM6DSO16IS</li>
 </ul>
-<h2 id="contents-2">Contents</h2>
+<h2 id="contents-3">Contents</h2>
 <p>The X-CUBE-ISPU expansion software package comes with a rich set of
 examples running on STMicroelectronics boards, organized by board and
 provided with preconfigured projects for the main supported
@@ -747,12 +1019,12 @@ href="Utilities\PC_software\Unicleo-GUI.htm">release notes</a></td>
 </tr>
 </tbody>
 </table>
-<h2 id="known-limitations-2">Known Limitations</h2>
+<h2 id="known-limitations-3">Known Limitations</h2>
 <ul>
 <li>On dual-core STM32 series this expansion software can be used on
 both cores but exclusively</li>
 </ul>
-<h2 id="development-toolchains-and-compilers-2">Development Toolchains
+<h2 id="development-toolchains-and-compilers-3">Development Toolchains
 and Compilers</h2>
 <ul>
 <li>IAR Embedded Workbench for ARM (EWARM) toolchain V9.20.1</li>
@@ -760,13 +1032,13 @@ and Compilers</h2>
 V5.37.0</li>
 <li>STM32CubeIDE V1.9.0</li>
 </ul>
-<h2 id="supported-devices-and-boards-2">Supported Devices and
+<h2 id="supported-devices-and-boards-3">Supported Devices and
 Boards</h2>
 <ul>
 <li>STM32F401RE devices and NUCLEO-F401RE board RevC</li>
 <li>STM32L476RG devices and NUCLEO-L476RG board RevC</li>
 </ul>
-<h2 id="dependencies-2">Dependencies</h2>
+<h2 id="dependencies-3">Dependencies</h2>
 <p>None</p>
 </div>
 </div>

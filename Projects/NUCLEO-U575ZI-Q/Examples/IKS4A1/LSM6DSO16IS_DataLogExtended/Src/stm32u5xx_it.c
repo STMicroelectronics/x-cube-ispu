@@ -6,7 +6,7 @@
   ******************************************************************************
   * @attention
   *
-  * Copyright (c) 2023 STMicroelectronics.
+  * Copyright (c) 2024 STMicroelectronics.
   * All rights reserved.
   *
   * This software is licensed under terms that can be found in the LICENSE file
@@ -73,7 +73,7 @@ void NMI_Handler(void)
 
   /* USER CODE END NonMaskableInt_IRQn 0 */
   /* USER CODE BEGIN NonMaskableInt_IRQn 1 */
-  while (1)
+   while (1)
   {
   }
   /* USER CODE END NonMaskableInt_IRQn 1 */
@@ -207,24 +207,10 @@ void EXTI13_IRQHandler(void)
   /* USER CODE BEGIN EXTI13_IRQn 0 */
 
   /* USER CODE END EXTI13_IRQn 0 */
-  HAL_GPIO_EXTI_IRQHandler(USER_BUTTON_Pin);
+  HAL_EXTI_IRQHandler(&H_EXTI_13);
   /* USER CODE BEGIN EXTI13_IRQn 1 */
 
   /* USER CODE END EXTI13_IRQn 1 */
-}
-
-/**
-  * @brief This function handles EXTI Line15 interrupt.
-  */
-void EXTI15_IRQHandler(void)
-{
-  /* USER CODE BEGIN EXTI15_IRQn 0 */
-
-  /* USER CODE END EXTI15_IRQn 0 */
-  HAL_EXTI_IRQHandler(&H_EXTI_15);
-  /* USER CODE BEGIN EXTI15_IRQn 1 */
-
-  /* USER CODE END EXTI15_IRQn 1 */
 }
 
 /**

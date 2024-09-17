@@ -6,7 +6,7 @@
   ******************************************************************************
   * @attention
   *
-  * Copyright (c) 2023 STMicroelectronics.
+  * Copyright (c) 2024 STMicroelectronics.
   * All rights reserved.
   *
   * This software is licensed under terms that can be found in the LICENSE file
@@ -105,7 +105,7 @@ int32_t ReverseByteStuffCopyByte(uint8_t *Source, uint8_t *Dest)
       return 2;
     }
 
-    return 0; // invalide sequence
+    return 0; /* Invalid sequence */
   }
   else
   {
@@ -137,7 +137,7 @@ int32_t ReverseByteStuffCopyByte2(uint8_t Source0, uint8_t Source1, uint8_t *Des
       return 2;
     }
 
-    return 0; // invalid sequence
+    return 0; /* Invalid sequence */
   }
   else
   {
@@ -187,7 +187,7 @@ int32_t ReverseByteStuffCopy(TMsg_t *Dest, uint8_t *Source)
         }
         else
         {
-          return 0; // invalid sequence
+          return 0; /* Invalid sequence */
         }
       }
 

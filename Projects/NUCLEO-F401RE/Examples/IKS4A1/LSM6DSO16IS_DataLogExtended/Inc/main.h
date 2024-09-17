@@ -7,7 +7,7 @@
   ******************************************************************************
   * @attention
   *
-  * Copyright (c) 2023 STMicroelectronics.
+  * Copyright (c) 2024 STMicroelectronics.
   * All rights reserved.
   *
   * This software is licensed under terms that can be found in the LICENSE file
@@ -63,9 +63,9 @@ void MX_TIM3_Init(void);
 #define B1_Pin GPIO_PIN_13
 #define B1_GPIO_Port GPIOC
 #define B1_EXTI_IRQn EXTI15_10_IRQn
-#define USER_INT_Pin GPIO_PIN_10
-#define USER_INT_GPIO_Port GPIOA
-#define USER_INT_EXTI_IRQn EXTI15_10_IRQn
+#define LSM6DSO16IS_INT2_Pin GPIO_PIN_8
+#define LSM6DSO16IS_INT2_GPIO_Port GPIOA
+#define LSM6DSO16IS_INT2_EXTI_IRQn EXTI9_5_IRQn
 #define TMS_Pin GPIO_PIN_13
 #define TMS_GPIO_Port GPIOA
 #define TCK_Pin GPIO_PIN_14

@@ -6,7 +6,7 @@
   ******************************************************************************
   * @attention
   *
-  * Copyright (c) 2023 STMicroelectronics.
+  * Copyright (c) 2024 STMicroelectronics.
   * All rights reserved.
   *
   * This software is licensed under terms that can be found in the LICENSE file
@@ -47,13 +47,13 @@ extern "C" {
 #if (USE_CUSTOM_MOTION_SENSOR_LSM6DSO16IS_0 == 1)
 #ifndef CUSTOM_ACC_INSTANCE_0
 #define CUSTOM_ACC_INSTANCE_0 CUSTOM_LSM6DSO16IS_0
-#define CUSTOM_ACC_INSTANCE_NAME_0 "LSM6DSO16IS (DIL24)"
+#define CUSTOM_ACC_INSTANCE_NAME_0 "LSM6DSO16IS"
 #define CUSTOM_ACC_INSTANCE_ODR_0 {10, 12.5, 26, 52, 104, 208, 416, 833, 1667, 3333, 6667} /* Hz */
 #define CUSTOM_ACC_INSTANCE_FS_0 {4, 2, 4, 8, 16} /* g */
 #endif /* CUSTOM_ACC_INSTANCE_0 */
 #ifndef CUSTOM_GYR_INSTANCE_0
 #define CUSTOM_GYR_INSTANCE_0 CUSTOM_LSM6DSO16IS_0
-#define CUSTOM_GYR_INSTANCE_NAME_0 "LSM6DSO16IS (DIL24)"
+#define CUSTOM_GYR_INSTANCE_NAME_0 "LSM6DSO16IS"
 #define CUSTOM_GYR_INSTANCE_ODR_0 {10, 12.5, 26, 52, 104, 208, 416, 833, 1667, 3333, 6667} /* Hz */
 #define CUSTOM_GYR_INSTANCE_FS_0 {4, 250, 500, 1000, 2000} /* dps */
 #endif /* CUSTOM_GYR_INSTANCE_0 */
