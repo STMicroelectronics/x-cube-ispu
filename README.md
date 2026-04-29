@@ -3,7 +3,7 @@
 ![latest tag](https://img.shields.io/github/v/tag/STMicroelectronics/x-cube-ispu.svg?color=brightgreen)
 
 > [!NOTE]
-> ## **X-CUBE-ISPU** software package is not available anymore in this repository
+> ## **X-CUBE-ISPU** software package is now deprecated and this repository is not maintained anymore.
 >
 > If needed, the functionalities can be found in the MEMS-Studio application available on our website `st.com` and downloadable from [here](https://www.st.com/en/development-tools/mems-studio.html). You will be prompted to login or to register in case you have no account. The ISPU part drivers are available in X-CUBE-MEMS1 package and downloadable from [here](https://www.st.com/en/embedded-software/x-cube-mems1.html). The ISPU examples are available on GitHub and downloadable from [here](https://github.com/STMicroelectronics/st-mems-ispu).
 
