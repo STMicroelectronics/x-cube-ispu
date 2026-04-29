@@ -2,6 +2,11 @@
 
 ![latest tag](https://img.shields.io/github/v/tag/STMicroelectronics/x-cube-ispu.svg?color=brightgreen)
 
+> [!NOTE]
+> ## **X-CUBE-ISPU** software package is not available anymore in this repository
+>
+> If needed, the functionalities can be found in the MEMS-Studio application available on our website `st.com` and downloadable from [here](https://www.st.com/en/development-tools/mems-studio.html). You will be prompted to login or to register in case you have no account. The ISPU part drivers are available in X-CUBE-MEMS1 package and downloadable from [here](https://www.st.com/en/embedded-software/x-cube-mems1.html). The ISPU examples are available on GitHub and downloadable from [here](https://github.com/STMicroelectronics/st-mems-ispu).
+
 The X-CUBE-ISPU is an expansion software package for STM32Cube. This software is gathering Temperature, Humidity, Pressure and Motion sensor drivers for the HTS221, LPS22HH, LIS2MDL, IIS2MDC, ISM330IS, LSM6DSO16IS, SHT40-AD1B, LPS22DF, STTS22H devices, running on STM32. It is built on top of STM32Cube software technology that ease portability across different STM32 microcontrollers.
 
 **X-CUBE-ISPU software features**:
